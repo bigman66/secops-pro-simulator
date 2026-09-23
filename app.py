@@ -163,7 +163,7 @@ elif st.session_state.mode in ["Study", "Exam", "Adaptive"]:
                         prompt = f"Question: {q['stem']}\nAnswer: {', '.join(q['answer'])}\nExplanation: {q['explanation']}\nUser query: {user_query}"
                         with st.spinner("Asking Gemini..."):
                             response = client.models.generate_content(
-                                model="gemini-2.5-flash",
+                                model="gemini-3.6-flash",
                                 contents=prompt
                             )
                             st.write(response.text)
