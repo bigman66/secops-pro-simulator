@@ -5,10 +5,12 @@ import json
 import os
 from dotenv import load_dotenv
 
+# Load local environment variables
 load_dotenv()
 
 st.set_page_config(page_title="SecOps-Pro Exam Simulator", layout="wide", page_icon="🛡️")
 
+# Load Question Bank directly from JSON
 @st.cache_data
 def load_questions():
     try:
@@ -20,6 +22,7 @@ def load_questions():
 
 all_questions = load_questions()
 
+# Initialize Session State Variables
 if "mode" not in st.session_state:
     st.session_state.mode = "Menu"
 if "session_questions" not in st.session_state:
@@ -28,9 +31,8 @@ if "current_idx" not in st.session_state:
     st.session_state.current_idx = 0
 if "user_answers" not in st.session_state:
     st.session_state.user_answers = {}
-if "submitted_current" not in st.session_state:
-    st.session_state.submitted_current = False
 
+# Sidebar Navigation
 st.sidebar.title("🛡️ SecOps-Pro Simulator")
 st.sidebar.caption("Palo Alto Networks Certified Security Operations Professional")
 
@@ -40,7 +42,9 @@ if st.sidebar.button("🏠 Return to Menu"):
 
 st.sidebar.markdown("---")
 
-# MENU MODE
+# -----------------------------------------------------------------------------
+# 1. MENU MODE
+# -----------------------------------------------------------------------------
 if st.session_state.mode == "Menu":
     st.title("Palo Alto Networks SecOps-Pro Exam Simulator")
     st.write(f"Loaded **{len(all_questions)} verified questions** across all 5 blueprint domains.")
@@ -50,18 +54,27 @@ if st.session_state.mode == "Menu":
     with col1:
         st.subheader("📚 Study Mode")
         st.write("Immediate feedback, explanations, distractor analysis, and blueprint mapping after every question.")
+        
+        start_q = st.number_input(
+            "Start at Question #:", 
+            min_value=1, 
+            max_value=max(1, len(all_questions)), 
+            value=1, 
+            step=10,
+            key="study_start_num"
+        )
+        
         if st.button("Start Study Mode", use_container_width=True):
             st.session_state.mode = "Study"
             st.session_state.session_questions = all_questions.copy()
-            st.session_state.current_idx = 0
+            st.session_state.current_idx = int(start_q) - 1
             st.session_state.user_answers = {}
-            st.session_state.submitted_current = False
             st.rerun()
 
     with col2:
         st.subheader("📝 Exam Mode")
         st.write("Uninterrupted mock examination. Zero feedback until final scorecard generation.")
-        exam_length = st.selectbox("Number of Questions:", [20, 40, 60, len(all_questions)], index=1)
+        exam_length = st.selectbox("Number of Questions:", [20, 40, 60, len(all_questions)], index=min(1, len(all_questions)))
         if st.button("Start Exam Mode", use_container_width=True):
             st.session_state.mode = "Exam"
             shuffled = all_questions.copy()
@@ -69,35 +82,42 @@ if st.session_state.mode == "Menu":
             st.session_state.session_questions = shuffled[:exam_length]
             st.session_state.current_idx = 0
             st.session_state.user_answers = {}
-            st.session_state.submitted_current = False
             st.rerun()
 
     with col3:
         st.subheader("🎯 Adaptive Mode")
         st.write("Filters practice questions dynamically by specific domain focus.")
-        domains = sorted(list(set([q["domain"] for q in all_questions])))
-        selected_domain = st.selectbox("Focus Domain:", domains)
-        if st.button("Start Adaptive Session", use_container_width=True):
+        domains = sorted(list(set([q["domain"] for q in all_questions]))) if all_questions else []
+        selected_domain = st.selectbox("Focus Domain:", domains) if domains else None
+        if st.button("Start Adaptive Session", use_container_width=True) and selected_domain:
             st.session_state.mode = "Adaptive"
             filtered = [q for q in all_questions if q["domain"] == selected_domain]
             st.session_state.session_questions = filtered
             st.session_state.current_idx = 0
             st.session_state.user_answers = {}
-            st.session_state.submitted_current = False
             st.rerun()
 
-# QUESTION ENGINE
+# -----------------------------------------------------------------------------
+# 2. QUESTION ENGINE (STUDY, EXAM, ADAPTIVE)
+# -----------------------------------------------------------------------------
 elif st.session_state.mode in ["Study", "Exam", "Adaptive"]:
     q_list = st.session_state.session_questions
     idx = st.session_state.current_idx
 
-    if idx >= len(q_list):
+    # Check bounds
+    if idx < 0:
+        st.session_state.current_idx = 0
+        st.rerun()
+    elif idx >= len(q_list):
         st.session_state.mode = "Scorecard"
         st.rerun()
 
     q = q_list[idx]
+    q_id = q["id"]
+    existing_answers = st.session_state.user_answers.get(q_id, [])
+    is_submitted = q_id in st.session_state.user_answers
 
-    st.caption(f"Mode: **{st.session_state.mode} Mode** | Question {idx + 1} of {len(q_list)} | ID: {q['id']}")
+    st.caption(f"Mode: **{st.session_state.mode} Mode** | Question {idx + 1} of {len(q_list)} | ID: {q_id}")
     st.progress((idx) / len(q_list))
 
     st.markdown(f"### {q['stem']}")
@@ -106,36 +126,50 @@ elif st.session_state.mode in ["Study", "Exam", "Adaptive"]:
     if q["is_multiselect"]:
         st.warning(f"⚠️ **Select {len(q['answer'])} options**")
 
+    # Render Options & Pre-select Existing Answers
     selected_options = []
     if q["is_multiselect"]:
         for letter, text in q["options"].items():
-            if st.checkbox(f"**{letter}.** {text}", key=f"cb_{q['id']}_{letter}"):
+            is_checked = letter in existing_answers
+            if st.checkbox(f"**{letter}.** {text}", value=is_checked, key=f"cb_{q_id}_{letter}_{idx}"):
                 selected_options.append(letter)
     else:
+        default_index = None
+        options_keys = list(q["options"].keys())
+        if existing_answers and existing_answers[0] in options_keys:
+            default_index = options_keys.index(existing_answers[0])
+
         choice = st.radio(
             "Choose your answer:",
-            options=list(q["options"].keys()),
+            options=options_keys,
             format_func=lambda x: f"{x}. {q['options'][x]}",
-            index=None,
-            key=f"radio_{q['id']}"
+            index=default_index,
+            key=f"radio_{q_id}_{idx}"
         )
         if choice:
             selected_options = [choice]
 
     st.markdown("---")
-    col_sub, col_next = st.columns([1, 1])
+    
+    # Navigation Buttons: Previous | Submit/Record | Next
+    col_prev, col_sub, col_next = st.columns([1, 1, 1])
 
+    # Previous Button
+    if col_prev.button("⬅️ Previous Question", disabled=(idx == 0), use_container_width=True):
+        st.session_state.current_idx -= 1
+        st.rerun()
+
+    # Action Handling for Study/Adaptive
     if st.session_state.mode in ["Study", "Adaptive"]:
-        if not st.session_state.submitted_current:
-            if col_sub.button("Submit Answer", type="primary", use_container_width=True):
-                if not selected_options:
-                    st.error("Please select an answer before submitting.")
-                else:
-                    st.session_state.user_answers[q["id"]] = selected_options
-                    st.session_state.submitted_current = True
-                    st.rerun()
-        else:
-            user_ans = set(st.session_state.user_answers.get(q["id"], []))
+        if col_sub.button("Submit / Lock Answer", type="primary", use_container_width=True):
+            if not selected_options:
+                st.error("Please select an answer before submitting.")
+            else:
+                st.session_state.user_answers[q_id] = selected_options
+                st.rerun()
+
+        if is_submitted:
+            user_ans = set(existing_answers)
             correct_ans = set(q["answer"])
 
             if user_ans == correct_ans:
@@ -151,7 +185,7 @@ elif st.session_state.mode in ["Study", "Exam", "Adaptive"]:
             if api_key:
                 st.markdown("---")
                 st.subheader("🤖 Ask Gemini AI Tutor")
-                user_query = st.text_input("Have a follow-up question about this concept?", key=f"ai_q_{q['id']}")
+                user_query = st.text_input("Have a follow-up question about this concept?", key=f"ai_q_{q_id}")
                 if st.button("Ask AI Tutor"):
                     try:
                         from google import genai
@@ -166,21 +200,19 @@ elif st.session_state.mode in ["Study", "Exam", "Adaptive"]:
                     except Exception as e:
                         st.error(f"Gemini API Error: {e}")
 
-            if col_next.button("Next Question ➡️", type="primary", use_container_width=True):
-                st.session_state.current_idx += 1
-                st.session_state.submitted_current = False
-                st.rerun()
-
+    # Action Handling for Exam Mode
     elif st.session_state.mode == "Exam":
-        if col_sub.button("Record Answer & Next ➡️", type="primary", use_container_width=True):
-            if not selected_options:
-                st.error("Please select an answer before continuing.")
-            else:
-                st.session_state.user_answers[q["id"]] = selected_options
-                st.session_state.current_idx += 1
-                st.rerun()
+        if selected_options:
+            st.session_state.user_answers[q_id] = selected_options
 
-# SCORECARD MODE
+    # Next Button
+    if col_next.button("Next Question ➡️", type="primary" if st.session_state.mode == "Exam" else "secondary", use_container_width=True):
+        st.session_state.current_idx += 1
+        st.rerun()
+
+# -----------------------------------------------------------------------------
+# 3. SCORECARD MODE
+# -----------------------------------------------------------------------------
 elif st.session_state.mode == "Scorecard":
     st.title("📊 Examination Performance Scorecard")
 
@@ -200,16 +232,16 @@ elif st.session_state.mode == "Scorecard":
         u_ans = set(user_ans_dict.get(q["id"], []))
         c_ans = set(q["answer"])
         
-        if u_ans == c_ans:
+        if u_ans and u_ans == c_ans:
             correct_count += 1
             domain_stats[d]["correct"] += 1
 
     accuracy = (correct_count / total_attempted * 100) if total_attempted > 0 else 0
 
     col_m1, col_m2, col_m3 = st.columns(3)
-    col_m1.metric("Total Questions", total_attempted)
+    col_m1.metric("Total Answered", f"{total_attempted} / {len(q_list)}")
     col_m2.metric("Correct Answers", f"{correct_count} / {total_attempted}")
-    col_m3.metric("Raw Accuracy", f"{accuracy:.1f}%")
+    col_m3.metric("Accuracy", f"{accuracy:.1f}%")
 
     st.subheader("Blueprint Domain Breakdown")
     table_data = []
@@ -227,8 +259,8 @@ elif st.session_state.mode == "Scorecard":
     st.subheader("Question-by-Question Review")
     for q in q_list:
         u_ans = user_ans_dict.get(q["id"], [])
-        is_correct = set(u_ans) == set(q["answer"])
-        status = "✅ Correct" if is_correct else "❌ Incorrect"
+        is_correct = set(u_ans) == set(q["answer"]) if u_ans else False
+        status = "✅ Correct" if is_correct else ("❌ Incorrect" if u_ans else "⚪ Unanswered")
 
         with st.expander(f"{status} | {q['id']} - {q['stem'][:80]}..."):
             st.write(f"**Full Question:** {q['stem']}")
