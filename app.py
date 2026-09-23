@@ -1,24 +1,25 @@
 import streamlit as st
 import pandas as pd
 import random
+import json
 import os
 from dotenv import load_dotenv
-from parser import parse_master_bank
 
-# Load local environment variables (if using .env file)
 load_dotenv()
 
-# Streamlit Page Config
 st.set_page_config(page_title="SecOps-Pro Exam Simulator", layout="wide", page_icon="🛡️")
 
-# Load Question Bank
 @st.cache_data
 def load_questions():
-    return parse_master_bank()
+    try:
+        with open("questions.json", "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        st.error("Error: 'questions.json' not found. Run 'python build_master_json.py' first.")
+        return []
 
 all_questions = load_questions()
 
-# Initialize Session State Variables
 if "mode" not in st.session_state:
     st.session_state.mode = "Menu"
 if "session_questions" not in st.session_state:
@@ -30,7 +31,6 @@ if "user_answers" not in st.session_state:
 if "submitted_current" not in st.session_state:
     st.session_state.submitted_current = False
 
-# Sidebar Controls
 st.sidebar.title("🛡️ SecOps-Pro Simulator")
 st.sidebar.caption("Palo Alto Networks Certified Security Operations Professional")
 
@@ -40,12 +40,10 @@ if st.sidebar.button("🏠 Return to Menu"):
 
 st.sidebar.markdown("---")
 
-# -----------------------------------------------------------------------------
 # MENU MODE
-# -----------------------------------------------------------------------------
 if st.session_state.mode == "Menu":
     st.title("Palo Alto Networks SecOps-Pro Exam Simulator")
-    st.write("Select a simulation mode to begin your practice session:")
+    st.write(f"Loaded **{len(all_questions)} verified questions** across all 5 blueprint domains.")
 
     col1, col2, col3 = st.columns(3)
 
@@ -77,7 +75,7 @@ if st.session_state.mode == "Menu":
     with col3:
         st.subheader("🎯 Adaptive Mode")
         st.write("Filters practice questions dynamically by specific domain focus.")
-        domains = list(set([q["domain"] for q in all_questions]))
+        domains = sorted(list(set([q["domain"] for q in all_questions])))
         selected_domain = st.selectbox("Focus Domain:", domains)
         if st.button("Start Adaptive Session", use_container_width=True):
             st.session_state.mode = "Adaptive"
@@ -88,9 +86,7 @@ if st.session_state.mode == "Menu":
             st.session_state.submitted_current = False
             st.rerun()
 
-# -----------------------------------------------------------------------------
 # QUESTION ENGINE
-# -----------------------------------------------------------------------------
 elif st.session_state.mode in ["Study", "Exam", "Adaptive"]:
     q_list = st.session_state.session_questions
     idx = st.session_state.current_idx
@@ -150,7 +146,7 @@ elif st.session_state.mode in ["Study", "Exam", "Adaptive"]:
             st.markdown("#### Official Technical Logic & Explanation:")
             st.write(q["explanation"])
 
-            # Gemini AI Integration (Works if GEMINI_API_KEY is configured)
+            # Gemini AI Integration
             api_key = os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY", None)
             if api_key:
                 st.markdown("---")
@@ -184,9 +180,7 @@ elif st.session_state.mode in ["Study", "Exam", "Adaptive"]:
                 st.session_state.current_idx += 1
                 st.rerun()
 
-# -----------------------------------------------------------------------------
 # SCORECARD MODE
-# -----------------------------------------------------------------------------
 elif st.session_state.mode == "Scorecard":
     st.title("📊 Examination Performance Scorecard")
 
@@ -219,7 +213,8 @@ elif st.session_state.mode == "Scorecard":
 
     st.subheader("Blueprint Domain Breakdown")
     table_data = []
-    for dom, stats in domain_stats.items():
+    for dom in sorted(domain_stats.keys()):
+        stats = domain_stats[dom]
         dom_acc = (stats["correct"] / stats["total"] * 100) if stats["total"] > 0 else 0
         table_data.append({
             "SecOps-Pro Blueprint Domain": dom,
