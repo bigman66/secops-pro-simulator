@@ -1,23 +1,26 @@
 import re
 
 def parse_master_bank(filepath="04_SecOps_Pro_Validated_Master_Bank_163Q.txt"):
-    """Parses the SecOps-Pro master question text file into structured objects."""
+    """Robust parser for the SecOps-Pro master question bank covering all 5 domains."""
     with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
         text = f.read()
 
     questions = []
-    blocks = text.split("========================================================================================")
+    # Split by blocks separated by 10 or more '=' or '-' characters
+    blocks = re.split(r"={10,}|-{10,}", text)
 
     for block in blocks:
-        if "ID: SECOPS-" not in block:
+        if "ID:" not in block:
             continue
 
-        q_id_match = re.search(r"ID:\s*(SECOPS-\d+)", block)
-        domain_match = re.search(r"Domain:\s*([^\n]+)", block)
-        objective_match = re.search(r"Objective:\s*([^\n]+)", block)
-        answer_match = re.search(r"Answer:\s*([^\n]+)", block)
-        q_part_match = re.search(r"Question:\s*\n(.*?)\nAnswer:", block, re.DOTALL)
-        exp_match = re.search(r"Explanation:\s*\n(.*)", block, re.DOTALL)
+        q_id_match = re.search(r"ID:\s*([A-Za-z0-9-]+)", block)
+        domain_match = re.search(r"Domain:\s*([^\n\r]+)", block)
+        objective_match = re.search(r"Objective:\s*([^\n\r]+)", block)
+        answer_match = re.search(r"(?:Answer|Correct Answer):\s*([^\n\r]+)", block, re.IGNORECASE)
+        
+        # Flexible match for Question stem through Answer declaration
+        q_part_match = re.search(r"Question:\s*(.*?)\n\s*(?:Answer|Correct Answer):", block, re.DOTALL | re.IGNORECASE)
+        exp_match = re.search(r"Explanation:\s*(.*)", block, re.DOTALL | re.IGNORECASE)
 
         if not (q_id_match and answer_match and q_part_match):
             continue
@@ -36,7 +39,7 @@ def parse_master_bank(filepath="04_SecOps_Pro_Validated_Master_Bank_163Q.txt"):
 
         for line in lines:
             line_str = line.strip()
-            opt_match = re.match(r"^([A-E])\.(.*)", line_str)
+            opt_match = re.match(r"^([A-E])[\.\)]\s*(.*)", line_str)
             if opt_match:
                 current_opt = opt_match.group(1)
                 opt_text = opt_match.group(2).strip()
