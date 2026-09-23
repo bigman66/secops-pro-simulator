@@ -5,10 +5,10 @@
     "objective": "1.1 - Users, roles, log management, compliance, and data protection",
     "stem": "What is the primary function of log ingestion in Cortex XDR?",
     "options": {
-      "A": "To store endpoint backup files",
+      "A": "To automate firewall rule creation",
       "B": "To enable real-time and historical threat analysis",
-      "C": "To automate firewall rule creation",
-      "D": "To encrypt user traffic"
+      "C": "To encrypt user traffic",
+      "D": "To store endpoint backup files"
     },
     "answer": [
       "B"
@@ -22,13 +22,13 @@
     "objective": "1.1 - Users, roles, log management, compliance, and data protection",
     "stem": "Which Cortex XDR data source provides detailed insight into endpoint process execution?",
     "options": {
-      "A": "Firewall traffic logs",
-      "B": "Cortex XDR agent telemetry",
-      "C": "Authentication logs",
-      "D": "Network flow records"
+      "A": "Network flow records",
+      "B": "Authentication logs",
+      "C": "Firewall traffic logs",
+      "D": "Cortex XDR agent telemetry"
     },
     "answer": [
-      "B"
+      "D"
     ],
     "explanation": "Cortex XDR agent telemetry collected from endpoints is a primary source of\ninformation about endpoint activities. This includes detailed telemetry on process execution, such\nas process creation events, command-line arguments, parent-child process relationships, and\nmodule loads. This granular data is crucial for detecting and investigating malware,\nliving-off-the-land techniques, and other endpoint-based threats.\n\n========================================================================================",
     "is_multiselect": false
@@ -39,13 +39,13 @@
     "objective": "1.1 - Users, roles, log management, compliance, and data protection",
     "stem": "Which Cortex XDR capability helps an organization meet data-retention obligations associated with regulatory compliance?",
     "options": {
-      "A": "Licensed data-retention controls and add-ons",
-      "B": "Automated firewall updates",
+      "A": "Automated firewall updates",
+      "B": "VPN integration",
       "C": "DNS sinkholing",
-      "D": "VPN integration"
+      "D": "Licensed data-retention controls and add-ons"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Cortex XDR supports regulatory data-retention obligations through licensed retention controls and add-ons. Retention is determined by the applicable Cortex license, data type, storage tier, and any purchased retention extension; it is not a universal policy switch that guarantees compliance by itself. The organization must select suitable retention and access settings, document those settings, and align them with its legal and regulatory requirements. Option A is therefore the only answer that directly addresses the retention capability relevant to compliance.\n\n========================================================================================",
     "is_multiselect": false
@@ -56,13 +56,13 @@
     "objective": "1.1 - Users, roles, log management, compliance, and data protection",
     "stem": "Which two practices can improve the efficiency of log management and investigation in Cortex XDR? (Choose two)",
     "options": {
-      "A": "Filtering data to focus on relevant severity and event criteria",
-      "B": "Deleting all logs after 24 hours",
-      "C": "Using centralized Cortex data storage with appropriate licensed retention",
+      "A": "Deleting all logs after 24 hours",
+      "B": "Using centralized Cortex data storage with appropriate licensed retention",
+      "C": "Filtering data to focus on relevant severity and event criteria",
       "D": "Disabling event correlation"
     },
     "answer": [
-      "A",
+      "B",
       "C"
     ],
     "explanation": "Log management efficiency in Cortex XDR is improved by focusing analyst attention and\nleveraging a scalable infrastructure. Filtering logs by severity (A) allows security teams to\nprioritize critical events, reducing noise and focusing investigative efforts. Using centralized Cortex data storage with suitable licensed retention (C) provides a scalable repository for investigation and historical analysis. The available retention period depends on the applicable product, license, data type, and retention add-ons; it must be configured to meet the organization's investigative and compliance needs.\n\n========================================================================================",
@@ -74,13 +74,13 @@
     "objective": "1.1 - Users, roles, log management, compliance, and data protection",
     "stem": "What is the purpose of role-based access control (RBAC) in Cortex XDR?",
     "options": {
-      "A": "To assign specific permissions based on user roles",
-      "B": "To disable access to all logs for external users",
-      "C": "To prevent logs from being stored in Cortex Data Lake",
-      "D": "To limit the number of alerts generated"
+      "A": "To disable access to all logs for external users",
+      "B": "To prevent logs from being stored in Cortex Data Lake",
+      "C": "To limit the number of alerts generated",
+      "D": "To assign specific permissions based on user roles"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "The purpose of role-based access control (RBAC) in Cortex XDR is to enforce the principle of\nleast privilege by assigning permissions to users based on their job functions or roles.\nAdministrators can create custom roles with granular control over what a user can see and do\nwithin the console, such as viewing incidents, running queries, or managing endpoint policies.\nThis ensures that users only have the access necessary to perform their duties, enhancing\nsecurity and operational integrity.\n\n========================================================================================",
     "is_multiselect": false
@@ -91,13 +91,13 @@
     "objective": "1.1 - Users, roles, log management, compliance, and data protection",
     "stem": "How can Cortex capabilities support an organization's compliance activities?",
     "options": {
-      "A": "By automatically blocking all network traffic",
-      "B": "By providing reports, audit evidence, and retained security data when properly licensed and configured",
+      "A": "By providing reports, audit evidence, and retained security data when properly licensed and configured",
+      "B": "By disabling external API access",
       "C": "By encrypting every endpoint hard drive",
-      "D": "By disabling external API access"
+      "D": "By automatically blocking all network traffic"
     },
     "answer": [
-      "B"
+      "A"
     ],
     "explanation": "Cortex XDR helps organizations achieve compliance by providing the necessary tools for security\nmonitoring, data retention, and reporting. It centralizes log data from across the environment,\nwhich can be retained through the applicable licensed Cortex retention capabilities to meet specific\nregulatory requirements (e.g., PCI DSS, HIPAA). The platform's powerful query language (XQL)\nand reporting features allow security teams to investigate incidents, monitor for policy violations,\nand generate audit-ready reports that demonstrate due diligence and control effectiveness to\nauditors.\n\n========================================================================================",
     "is_multiselect": false
@@ -108,9 +108,9 @@
     "objective": "1.1 - Users, roles, log management, compliance, and data protection",
     "stem": "Which best practice should security teams follow when managing user roles in Cortex XDR?",
     "options": {
-      "A": "Assign administrator access to all users",
+      "A": "Disable logging for low-priority alerts",
       "B": "Regularly review and update role permissions",
-      "C": "Disable logging for low-priority alerts",
+      "C": "Assign administrator access to all users",
       "D": "Use shared credentials for faster incident response"
     },
     "answer": [
@@ -125,13 +125,13 @@
     "objective": "1.2 - Reports and dashboards",
     "stem": "Which of the following is a key advantage of using dashboards in Cortex XDR?",
     "options": {
-      "A": "They provide a centralized view of security metrics",
-      "B": "They replace traditional endpoint protection solutions",
-      "C": "They automate software patch management",
-      "D": "They remove the need for security analysts"
+      "A": "They replace traditional endpoint protection solutions",
+      "B": "They remove the need for security analysts",
+      "C": "They provide a centralized view of security metrics",
+      "D": "They automate software patch management"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Dashboards in Cortex XDR serve as a primary interface for security operations, providing a\nconsolidated and customizable visualization of key security metrics. They aggregate data from\nvarious sources, such as endpoints, networks, and cloud environments, into widgets like charts\nand graphs. This centralized view allows security analysts to quickly assess the organization's\nsecurity posture, identify trends, monitor active threats, and prioritize incidents for investigation,\nthereby enhancing situational awareness and operational efficiency.\n\n========================================================================================",
     "is_multiselect": false
@@ -143,8 +143,8 @@
     "stem": "Which action helps reduce alert fatigue in Cortex XDR dashboards?",
     "options": {
       "A": "Prioritizing alerts based on severity",
-      "B": "Enabling auto-deletion of low-severity logs",
-      "C": "Blocking alerts from external sources",
+      "B": "Blocking alerts from external sources",
+      "C": "Enabling auto-deletion of low-severity logs",
       "D": "Disabling alert correlation"
     },
     "answer": [
@@ -159,13 +159,13 @@
     "objective": "1.2 - Reports and dashboards",
     "stem": "How does Cortex XDR improve compliance reporting?",
     "options": {
-      "A": "By automatically encrypting network traffic",
-      "B": "By generating audit-ready security event logs",
-      "C": "By preventing all outbound connections",
-      "D": "By disabling unverified endpoints"
+      "A": "By preventing all outbound connections",
+      "B": "By disabling unverified endpoints",
+      "C": "By automatically encrypting network traffic",
+      "D": "By generating audit-ready security event logs"
     },
     "answer": [
-      "B"
+      "D"
     ],
     "explanation": "Compliance frameworks (like PCI DSS, HIPAA, SOX) require organizations to maintain detailed,\nauditable logs of security events. Cortex XDR ingests, normalizes, and stores comprehensive\ndata from endpoints, networks, and cloud environments in the Cortex Data Lake. This centralized\nrepository provides a searchable, long-term record of security activities. Using the XQL query\nengine, security teams can generate specific reports and provide evidence of security controls\nand event history to auditors, thereby streamlining compliance reporting.\n\n========================================================================================",
     "is_multiselect": false
@@ -176,14 +176,14 @@
     "objective": "1.2 - Reports and dashboards",
     "stem": "Which two components are critical for log analysis in Cortex XDR? (Choose two)",
     "options": {
-      "A": "Cortex Data Lake",
+      "A": "URL Filtering",
       "B": "XQL Query Engine",
-      "C": "URL Filtering",
-      "D": "SD-WAN Optimization"
+      "C": "SD-WAN Optimization",
+      "D": "Cortex Data Lake"
     },
     "answer": [
-      "A",
-      "B"
+      "B",
+      "D"
     ],
     "explanation": "Effective log analysis in Cortex XDR relies on two fundamental components. First, the Cortex\nData Lake serves as the centralized, cloud-based repository where all security data from\nendpoints, firewalls, and other sources is collected, normalized, and stored for long-term\nretention. Second, the XQL Query Engine is the powerful, flexible language used to search, filter,\nand correlate the vast amounts of data within the Cortex Data Lake. Without the data store\n(Cortex Data Lake) and the tool to analyze it (XQL), log analysis would be impossible.\n\n========================================================================================",
     "is_multiselect": true
@@ -194,13 +194,13 @@
     "objective": "1.2 - Reports and dashboards",
     "stem": "Which feature in Cortex XDR enables security teams to visualize and track security trends over time?",
     "options": {
-      "A": "Incident Management",
-      "B": "Behavioral Analytics",
-      "C": "Custom Dashboards",
-      "D": "Dynamic Block Lists"
+      "A": "Dynamic Block Lists",
+      "B": "Custom Dashboards",
+      "C": "Behavioral Analytics",
+      "D": "Incident Management"
     },
     "answer": [
-      "C"
+      "B"
     ],
     "explanation": "Custom Dashboards in Cortex XDR are the primary feature for visualizing and tracking security\ntrends over time. Security teams can create and customize dashboards with various widgets,\nsuch as charts, graphs, and tables. These widgets can be configured to display key metrics like\nincident counts by severity, alert trends, endpoint health status, or specific MITRE ATT&CK\ntechnique prevalence over selected timeframes (e.g., last 24 hours, 30 days). This provides\nat-a-glance visibility into the organization's security posture and helps identify long-term patterns.\n\n========================================================================================",
     "is_multiselect": false
@@ -211,13 +211,13 @@
     "objective": "1.2 - Reports and dashboards",
     "stem": "Which Cortex capability can help provide evidence for compliance monitoring and audits?",
     "options": {
-      "A": "Compliance dashboards and report templates available for the applicable product, license, and content packs",
+      "A": "Deleting all user data after 30 days",
       "B": "Automatic blocking of all unauthorized network traffic",
-      "C": "Disabling all unverified applications",
-      "D": "Deleting all user data after 30 days"
+      "C": "Compliance dashboards and report templates available for the applicable product, license, and content packs",
+      "D": "Disabling all unverified applications"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Cortex XDR aids in regulatory compliance by providing robust reporting capabilities. While it\ndoesn't offer pre-built reports specifically named after regulations like \"HIPAA Report,\" it allows\nadministrators to generate custom reports and use XQL queries to extract the specific data\nrequired for audits. This data can demonstrate security controls, incident response activities, and\ndata access patterns, which are essential for frameworks like PCI DSS, GDPR, and HIPAA. The\nplatform's comprehensive data collection and query language are the tools used to ensure and\nprove compliance.\n\n========================================================================================",
     "is_multiselect": false
@@ -228,13 +228,13 @@
     "objective": "1.2 - Reports and dashboards",
     "stem": "How does Cortex XDR optimize security alert management for analysts?",
     "options": {
-      "A": "By automatically correlating related security events",
-      "B": "By disabling logging for low-severity alerts",
-      "C": "By blocking all unknown applications",
-      "D": "By restricting users from modifying alert settings"
+      "A": "By blocking all unknown applications",
+      "B": "By restricting users from modifying alert settings",
+      "C": "By disabling logging for low-severity alerts",
+      "D": "By automatically correlating related security events"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Cortex XDR optimizes security alert management by automatically correlating related alerts and\nsecurity events from multiple sources (endpoint, network, cloud) into a single, prioritized incident.\nThis analytics-driven approach groups disparate, low-fidelity signals into a comprehensive view of\na potential attack chain. By presenting analysts with a small number of high-fidelity incidents\ninstead of thousands of individual alerts, it significantly reduces alert fatigue, accelerates\ninvestigation, and allows security teams to focus on the most critical threats.\n\n========================================================================================",
     "is_multiselect": false
@@ -247,12 +247,12 @@
     "options": {
       "A": "Threat detection and response",
       "B": "Software development lifecycle management",
-      "C": "Security incident investigation",
-      "D": "IT infrastructure maintenance"
+      "C": "IT infrastructure maintenance",
+      "D": "Security incident investigation"
     },
     "answer": [
       "A",
-      "C"
+      "D"
     ],
     "explanation": "The core mission of a Security Operations Center (SOC) is to protect an organization by\npreventing, detecting, analyzing, and responding to cybersecurity threats and incidents. This is\nachieved through continuous monitoring of systems and networks for signs of malicious activity\n(threat detection) and conducting detailed examinations of security alerts to understand their\nscope, impact, and origin (security incident investigation). These two functions represent the\nfundamental, day-to-day operational responsibilities of any SOC.\n\n========================================================================================",
     "is_multiselect": true
@@ -263,13 +263,13 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "Which SOC role is primarily responsible for analyzing and responding to security incidents?",
     "options": {
-      "A": "SOC Manager",
-      "B": "Security Analyst",
+      "A": "Network Engineer",
+      "B": "SOC Manager",
       "C": "Threat Intelligence Analyst",
-      "D": "Network Engineer"
+      "D": "Security Analyst"
     },
     "answer": [
-      "B"
+      "D"
     ],
     "explanation": "The Security Analyst is the frontline operational role within the SOC, directly responsible for the\nhands-on work of handling security incidents. Their duties include monitoring security tools for\nalerts, triaging these alerts to determine their severity and validity, conducting investigations to\nunderstand the nature of a threat, and executing initial containment and response actions. While\nother roles support this process, the Security Analyst is the primary individual tasked with the\ndirect analysis and response to security events and incidents.\n\n========================================================================================",
     "is_multiselect": false
@@ -280,14 +280,14 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "Which two tools are commonly used in a SOC for log collection and analysis? (Choose two)",
     "options": {
-      "A": "SIEM (Security Information and Event Management)",
-      "B": "Endpoint Detection and Response (EDR)",
+      "A": "Endpoint Detection and Response (EDR)",
+      "B": "Software Development Kit (SDK)",
       "C": "Business Process Automation (BPA)",
-      "D": "Software Development Kit (SDK)"
+      "D": "SIEM (Security Information and Event Management)"
     },
     "answer": [
       "A",
-      "B"
+      "D"
     ],
     "explanation": "A Security Information and Event Management (SIEM) system is a cornerstone of the SOC,\ndesigned to aggregate, correlate, and analyze log data from a wide variety of sources across the\nnetwork. An Endpoint Detection and Response (EDR) tool is also critical, as it collects highly\ndetailed telemetry and logs directly from endpoints (e.g., laptops, servers). This endpoint data\nprovides deep visibility into process execution, file modifications, and network connections, which\nis essential for modern threat detection and investigation. Both tools are fundamental for\ncomprehensive log collection and analysis in a SOC.\n\n========================================================================================",
     "is_multiselect": true
@@ -298,13 +298,13 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "Which function of a SOC ensures that security incidents are properly escalated and managed?",
     "options": {
-      "A": "Incident Response Process",
-      "B": "Network Optimization",
-      "C": "Business Continuity Planning",
-      "D": "IT Infrastructure Upgrades"
+      "A": "Network Optimization",
+      "B": "IT Infrastructure Upgrades",
+      "C": "Incident Response Process",
+      "D": "Business Continuity Planning"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "The Incident Response (IR) Process is a structured methodology that defines how a Security\nOperations Center (SOC) detects, responds to, and recovers from cybersecurity incidents. This\nframework includes predefined procedures for triage, analysis, containment, eradication, and\nrecovery. A critical component of this process is the escalation path, which ensures that incidents\nare routed to the appropriate personnel (e.g., from Tier 1 to Tier 3 analysts or management)\nbased on their severity and complexity, ensuring timely and effective management.\n\n========================================================================================",
     "is_multiselect": false
@@ -315,13 +315,13 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "Which of the following best describes a Tier 3 SOC Analyst?",
     "options": {
-      "A": "A security expert responsible for initial triage of alerts",
-      "B": "An advanced threat hunter and incident responder",
-      "C": "A junior analyst responsible for managing firewall configurations",
-      "D": "A helpdesk technician assisting with password resets"
+      "A": "A helpdesk technician assisting with password resets",
+      "B": "A junior analyst responsible for managing firewall configurations",
+      "C": "An advanced threat hunter and incident responder",
+      "D": "A security expert responsible for initial triage of alerts"
     },
     "answer": [
-      "B"
+      "C"
     ],
     "explanation": "A Tier 3 SOC Analyst is a senior security expert with deep knowledge of cybersecurity threats\nand incident response. Their primary responsibilities include handling the most complex and\nsevere security incidents escalated from Tier 1 and Tier 2. They perform advanced forensic\nanalysis, malware reverse engineering, and lead proactive threat hunting initiatives to uncover\nhidden threats within the network. Their expertise is crucial for resolving major security events\nand improving the organization's overall security posture.\n\n========================================================================================",
     "is_multiselect": false
@@ -350,9 +350,9 @@
     "stem": "Which SOC technology commonly aggregates and correlates security events and alerts for centralized monitoring?",
     "options": {
       "A": "SIEM",
-      "B": "CRM",
-      "C": "ERP",
-      "D": "IoT controller"
+      "B": "ERP",
+      "C": "IoT controller",
+      "D": "CRM"
     },
     "answer": [
       "A"
@@ -367,9 +367,9 @@
     "stem": "What is the primary function of a Threat Intelligence Platform (TIP) in a SOC?",
     "options": {
       "A": "Managing customer support tickets",
-      "B": "Storing compliance policies",
+      "B": "Configuring network routers",
       "C": "Aggregating, analyzing, and sharing threat intelligence",
-      "D": "Configuring network routers"
+      "D": "Storing compliance policies"
     },
     "answer": [
       "C"
@@ -383,13 +383,13 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "Which metric is commonly used to measure the effectiveness of a SOC?",
     "options": {
-      "A": "Mean Time to Detect (MTTD)",
-      "B": "Sales Conversion Rate",
+      "A": "Sales Conversion Rate",
+      "B": "Server Uptime Percentage",
       "C": "Employee Satisfaction Index",
-      "D": "Server Uptime Percentage"
+      "D": "Mean Time to Detect (MTTD)"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Mean Time to Detect (MTTD) is a critical Key Performance Indicator (KPI) for measuring the\neffectiveness of a Security Operations Center (SOC). It quantifies the average time elapsed from\nthe moment a security threat or incident begins to when it is discovered by the security team. A\nlower MTTD indicates a more efficient and effective detection capability, as it signifies that threats\nare being identified more quickly, reducing the potential window for an attacker to cause damage.\nSOCs continuously strive to lower this metric through improved tooling, automation, and analyst\ntraining.\n\n========================================================================================",
     "is_multiselect": false
@@ -400,14 +400,14 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "Which two resources are commonly used to support threat-intelligence research in a SOC? (Choose two)",
     "options": {
-      "A": "MITRE ATT&CK",
-      "B": "VirusTotal",
-      "C": "DHCP server",
-      "D": "Load balancer"
+      "A": "DHCP server",
+      "B": "Load balancer",
+      "C": "MITRE ATT&CK",
+      "D": "VirusTotal"
     },
     "answer": [
-      "A",
-      "B"
+      "C",
+      "D"
     ],
     "explanation": "MITRE ATT&CK is a knowledge base of adversary tactics and techniques used to model and\nunderstand cyber threats, making it a foundational framework for threat intelligence. VirusTotal is\na service that aggregates many antivirus products and online scan engines to check for viruses\nthat may have been missed by a single scanner. SOC analysts frequently use VirusTotal to enrich\nIndicators of Compromise (IOCs) like file hashes, domains, and IPs. Both are essential tools for\ncontextualizing and investigating potential threats.\n\n========================================================================================",
     "is_multiselect": true
@@ -418,13 +418,13 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "Which data source is most commonly analyzed in a SOC to detect network threats?",
     "options": {
-      "A": "Financial transaction logs",
-      "B": "Web traffic and firewall logs",
-      "C": "Employee attendance records",
+      "A": "Employee attendance records",
+      "B": "Financial transaction logs",
+      "C": "Web traffic and firewall logs",
       "D": "HR payroll data"
     },
     "answer": [
-      "B"
+      "C"
     ],
     "explanation": "Web traffic and firewall logs are the most fundamental and commonly analyzed data sources in a\nSOC for detecting network-based threats. Firewalls, especially Next-Generation Firewalls\n(NGFWs), log all traffic passing through them, including source/destination IPs, ports, protocols,\nand application data. These logs provide direct visibility into network activity, allowing analysts to\nidentify anomalous patterns, policy violations, command-and-control (C2) communication, and\nother signs of malicious activity. This data is a primary feed for Security Information and Event\nManagement (SIEM) systems and other detection tools.\n\n========================================================================================",
     "is_multiselect": false
@@ -435,13 +435,13 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "What is the primary function of a Security Orchestration, Automation, and Response (SOAR) platform in a SOC?",
     "options": {
-      "A": "Managing employee access to corporate applications",
-      "B": "Automating threat response workflows and incident handling",
-      "C": "Optimizing network bandwidth for better performance",
-      "D": "Generating marketing reports for business analysis"
+      "A": "Automating threat response workflows and incident handling",
+      "B": "Generating marketing reports for business analysis",
+      "C": "Managing employee access to corporate applications",
+      "D": "Optimizing network bandwidth for better performance"
     },
     "answer": [
-      "B"
+      "A"
     ],
     "explanation": "The primary function of a Security Orchestration, Automation, and Response (SOAR) platform is\nto improve the efficiency of a Security Operations Center (SOC). It achieves this by ingesting\nalerts from various security tools, automating repetitive incident response tasks (e.g., data\nenrichment, threat containment), and orchestrating complex workflows across different products.\nThis allows security analysts to focus on high-priority threats and strategic initiatives rather than\nmanual, time-consuming processes. Palo Alto's Cortex XSOAR is a prime example of a platform\ndesigned for these specific purposes.\n\n========================================================================================",
     "is_multiselect": false
@@ -452,13 +452,13 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "Which of the following best describes the role of anomaly detection in a SOC?",
     "options": {
-      "A": "It identifies patterns in legitimate business transactions",
-      "B": "It flags deviations from normal system behavior that may indicate threats",
-      "C": "It generates automated firewall rules based on user activity",
-      "D": "It monitors employee work hours to ensure productivity"
+      "A": "It monitors employee work hours to ensure productivity",
+      "B": "It generates automated firewall rules based on user activity",
+      "C": "It flags deviations from normal system behavior that may indicate threats",
+      "D": "It identifies patterns in legitimate business transactions"
     },
     "answer": [
-      "B"
+      "C"
     ],
     "explanation": "Anomaly detection is a critical process in a modern SOC that involves establishing a baseline of\nnormal, expected behavior for systems, users, and network traffic. Its primary role is to\ncontinuously monitor activities and identify any significant deviations or outliers from this\nestablished baseline. These anomalies are flagged as potential security threats that may have\nbypassed traditional signature-based detection methods, enabling the SOC to investigate\npreviously unknown or stealthy attacks. This is a core capability of User and Entity Behavior\nAnalytics (UEBA) systems.\n\n========================================================================================",
     "is_multiselect": false
@@ -469,14 +469,14 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "Which of the following are common use cases for SIEM in a SOC? (Choose two)",
     "options": {
-      "A": "Threat detection and correlation",
-      "B": "Automated marketing campaign tracking",
-      "C": "Security event log aggregation",
-      "D": "Project management and task assignments"
+      "A": "Automated marketing campaign tracking",
+      "B": "Project management and task assignments",
+      "C": "Threat detection and correlation",
+      "D": "Security event log aggregation"
     },
     "answer": [
-      "A",
-      "C"
+      "C",
+      "D"
     ],
     "explanation": "A Security Information and Event Management (SIEM) system is a foundational tool in a SOC. Its\ntwo primary functions are log aggregation and threat correlation. First, it aggregates log and event\ndata from a wide array of sources across the IT environment, including servers, network devices,\nand applications, into a centralized repository (C). Second, it analyzes and correlates this data in\nreal-time to identify patterns, anomalies, and potential security threats that would be invisible\nwhen looking at individual systems (A).\n\n========================================================================================",
     "is_multiselect": true
@@ -487,13 +487,13 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "Which security monitoring technique helps detect slow and stealthy attacks that bypass traditional security controls?",
     "options": {
-      "A": "Signature-based detection",
+      "A": "Packet filtering",
       "B": "Heuristic scanning",
-      "C": "Behavioral analytics",
-      "D": "Packet filtering"
+      "C": "Signature-based detection",
+      "D": "Behavioral analytics"
     },
     "answer": [
-      "C"
+      "D"
     ],
     "explanation": "Behavioral analytics is the most effective technique for detecting slow, stealthy attacks, such as\nAdvanced Persistent Threats (APTs). This method works by first establishing a baseline of normal\nbehavior for users and entities (e.g., endpoints, servers) over time. It then continuously monitors\nfor subtle deviations from this baseline. Attackers conducting a slow and low attack will inevitably\ndeviate from normal patterns, such as accessing unusual data, using different commands, or\nconnecting at odd hours. Behavioral analytics can detect these anomalies that traditional,\nsignature-based tools would miss.\n\n========================================================================================",
     "is_multiselect": false
@@ -521,13 +521,13 @@
     "objective": "1.3 - SOC components and functions",
     "stem": "Which key metric is used to measure SOC effectiveness in responding to threats?",
     "options": {
-      "A": "Time to Market (TTM)",
-      "B": "Customer Retention Rate (CRR)",
-      "C": "Mean Time to Respond (MTTR)",
-      "D": "Annual Revenue Growth"
+      "A": "Mean Time to Respond (MTTR)",
+      "B": "Time to Market (TTM)",
+      "C": "Annual Revenue Growth",
+      "D": "Customer Retention Rate (CRR)"
     },
     "answer": [
-      "C"
+      "A"
     ],
     "explanation": "Mean Time to Respond (MTTR) is a critical key performance indicator (KPI) for measuring the\neffectiveness of a Security Operations Center (SOC). It quantifies the average time taken from\nthe initial detection of a security incident to its successful containment and remediation. A lower\nMTTR indicates a more efficient and effective incident response process, minimizing the potential\ndamage and impact of a threat. It is a standard industry metric used to benchmark and improve\nSOC performance over time.\n\n========================================================================================",
     "is_multiselect": false
@@ -539,9 +539,9 @@
     "stem": "Which of the following are key challenges faced by SOC teams? (Choose two)",
     "options": {
       "A": "Alert fatigue from excessive security notifications",
-      "B": "Increasing reliance on AI-driven automation",
+      "B": "Decreasing number of cyber threats each year",
       "C": "Shortage of skilled cybersecurity professionals",
-      "D": "Decreasing number of cyber threats each year"
+      "D": "Increasing reliance on AI-driven automation"
     },
     "answer": [
       "A",
@@ -573,13 +573,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "What is the primary role of Artificial Intelligence (AI) in security operations?",
     "options": {
-      "A": "Automating repetitive security tasks",
-      "B": "Completely replacing human analysts",
-      "C": "Detecting physical security threats",
-      "D": "Managing corporate IT budgets"
+      "A": "Completely replacing human analysts",
+      "B": "Managing corporate IT budgets",
+      "C": "Automating repetitive security tasks",
+      "D": "Detecting physical security threats"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "The primary role of Artificial Intelligence (AI) in security operations is to augment human analysts\nby automating high-volume, repetitive tasks. This includes alert triage, data correlation, and initial\nincident investigation. By handling these routine activities, AI frees up security professionals to\nfocus on more complex, high-priority threats that require human intuition and advanced\nproblem-solving skills. This enhances the efficiency and effectiveness of the Security Operations\nCenter (SOC), allowing for faster detection and response times while reducing analyst fatigue.\n\n========================================================================================",
     "is_multiselect": false
@@ -590,13 +590,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which statement most accurately describes the relationship between artificial intelligence (AI) and machine learning (ML) in cybersecurity?",
     "options": {
-      "A": "AI is the broader field; ML is a subset that learns patterns from data",
-      "B": "AI is used only for antivirus, while ML is used only for firewalls",
-      "C": "AI works only with structured data, while ML works only with unstructured data",
+      "A": "AI is used only for antivirus, while ML is used only for firewalls",
+      "B": "AI works only with structured data, while ML works only with unstructured data",
+      "C": "AI is the broader field; ML is a subset that learns patterns from data",
       "D": "AI and ML are identical terms"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "The key distinction lies in their scope and function. Artificial Intelligence (AI) is a broad field\nfocused on creating systems that can perform tasks requiring human-like intelligence, such as\nreasoning, problem-solving, and decision-making. Machine Learning (ML) is a specific subset of\nAI where algorithms are trained on large datasets to identify patterns and make predictions or\ndecisions without being explicitly programmed for the task. In cybersecurity, AI represents the\ngoal of intelligent security systems, while ML is the primary mechanism used to achieve it by\nlearning from threat data.\n\n========================================================================================",
     "is_multiselect": false
@@ -607,13 +607,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which SOC technology automates and orchestrates investigation and incident-response workflows?",
     "options": {
-      "A": "Security Orchestration, Automation, and Response (SOAR)",
-      "B": "Enterprise Resource Planning (ERP)",
-      "C": "Cloud Cost Optimization (CCO)",
-      "D": "IT Service Management (ITSM)"
+      "A": "Enterprise Resource Planning (ERP)",
+      "B": "Cloud Cost Optimization (CCO)",
+      "C": "IT Service Management (ITSM)",
+      "D": "Security Orchestration, Automation, and Response (SOAR)"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Security Orchestration, Automation, and Response (SOAR) platforms are specifically designed to\nautomate threat analysis and response workflows in a Security Operations Center (SOC). They\nintegrate with various security tools to centralize alerts, use AI and ML to enrich data (e.g., threat\nintelligence lookups), and execute automated playbooks to investigate and contain threats. This\nsignificantly reduces manual effort, standardizes incident response processes, and accelerates\nthe time to remediation, directly addressing the challenge of alert fatigue and improving SOC\nefficiency.\n\n========================================================================================",
     "is_multiselect": false
@@ -624,13 +624,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which of the following are advantages of using AI in cybersecurity? (Choose two)",
     "options": {
-      "A": "Faster incident response times",
-      "B": "Eliminates all human intervention in security operations",
+      "A": "Eliminates all human intervention in security operations",
+      "B": "Faster incident response times",
       "C": "Reduces false positives in threat detection",
       "D": "Prevents all cyberattacks"
     },
     "answer": [
-      "A",
+      "B",
       "C"
     ],
     "explanation": "Artificial intelligence (AI) and machine learning (ML) significantly enhance cybersecurity\noperations by automating the analysis of vast datasets at machine speed. This accelerates the\ndetection, investigation, and response lifecycle, leading to faster incident response times. AI\nmodels are trained to recognize complex patterns indicative of malicious activity while learning the\nbaseline of normal behavior. This capability allows them to more accurately distinguish true\nthreats from benign anomalies, thereby reducing the volume of false positive alerts that security\nanalysts must investigate.\n\n========================================================================================",
@@ -643,8 +643,8 @@
     "stem": "Which security challenge does Machine Learning help address?",
     "options": {
       "A": "Detecting evolving threats that do not have predefined signatures",
-      "B": "Blocking all incoming phishing emails",
-      "C": "Preventing all endpoint infections",
+      "B": "Preventing all endpoint infections",
+      "C": "Blocking all incoming phishing emails",
       "D": "Ensuring 100% accuracy in cybersecurity"
     },
     "answer": [
@@ -659,13 +659,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which Machine Learning technique is commonly used in anomaly-based intrusion detection?",
     "options": {
-      "A": "Regression Analysis",
-      "B": "Clustering",
-      "C": "Waterfall Modeling",
-      "D": "Load Balancing"
+      "A": "Clustering",
+      "B": "Regression Analysis",
+      "C": "Load Balancing",
+      "D": "Waterfall Modeling"
     },
     "answer": [
-      "B"
+      "A"
     ],
     "explanation": "Anomaly-based intrusion detection systems (IDS) work by establishing a baseline of normal\nsystem or network behavior and identifying deviations from this baseline. Clustering is an\nunsupervised machine learning technique that is ideal for this task. It groups similar data points\ntogether based on their characteristics. Data points that do not fit well into any cluster are\nconsidered outliers or anomalies, which can signify a potential intrusion or malicious activity. This\napproach does not require pre-labeled data of known attacks.\n\n========================================================================================",
     "is_multiselect": false
@@ -676,10 +676,10 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "How does AI improve phishing detection in cybersecurity?",
     "options": {
-      "A": "By blocking all emails from external domains",
+      "A": "By encrypting all incoming email traffic",
       "B": "By analyzing email metadata, sender behavior, and content for threats",
       "C": "By only allowing pre-approved email contacts",
-      "D": "By encrypting all incoming email traffic"
+      "D": "By blocking all emails from external domains"
     },
     "answer": [
       "B"
@@ -693,13 +693,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which of the following is a limitation of using AI in cybersecurity?",
     "options": {
-      "A": "AI requires human analysts for validation and decision-making",
+      "A": "AI makes security teams redundant",
       "B": "AI eliminates all cyber threats automatically",
-      "C": "AI does not require training data for threat detection",
-      "D": "AI makes security teams redundant"
+      "C": "AI requires human analysts for validation and decision-making",
+      "D": "AI does not require training data for threat detection"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "A significant limitation of AI in cybersecurity is its reliance on human oversight. AI models can\ngenerate false positives and may not comprehend the unique business context behind an alert.\nTherefore, human analysts are crucial for validating AI-generated findings, investigating complex\nincidents, and making final, context-aware decisions. The goal of AI in a modern Security\nOperations Center (SOC) is to augment human capabilities by automating repetitive tasks, not to\nreplace the critical thinking and expertise of security professionals.\n\n========================================================================================",
     "is_multiselect": false
@@ -710,9 +710,9 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which analysis approach can help detect malware variants by examining suspicious characteristics or behavior rather than relying only on exact signatures?",
     "options": {
-      "A": "Exact signature matching only",
+      "A": "Simple IP filtering",
       "B": "Heuristic analysis",
-      "C": "Simple IP filtering",
+      "C": "Exact signature matching only",
       "D": "Static allowlisting only"
     },
     "answer": [
@@ -727,10 +727,10 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "How does Machine Learning improve real-time threat detection in a SOC?",
     "options": {
-      "A": "By automating the patching process for all systems",
+      "A": "By blocking all inbound traffic from unknown sources",
       "B": "By identifying deviations from normal behavioral patterns",
       "C": "By replacing all security analysts in the SOC",
-      "D": "By blocking all inbound traffic from unknown sources"
+      "D": "By automating the patching process for all systems"
     },
     "answer": [
       "B"
@@ -744,13 +744,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which Machine Learning approach is commonly used to classify malware?",
     "options": {
-      "A": "Supervised Learning",
-      "B": "Unsupervised Learning",
+      "A": "Natural Language Processing",
+      "B": "Supervised Learning",
       "C": "Reinforcement Learning",
-      "D": "Natural Language Processing"
+      "D": "Unsupervised Learning"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Supervised learning is the most common approach for malware classification. This method\ninvolves training a machine learning model on a vast, pre-labeled dataset containing examples of\nboth malicious (malware) and benign files. Each sample is tagged with its correct classification.\nThe model learns the distinguishing features and patterns of different malware families from this\nlabeled data. Once trained, it can accurately classify new, unseen files by predicting whether they\nare malicious and identifying the type of threat, a core function of solutions like Palo Alto\nNetworks WildFire.\n\n========================================================================================",
     "is_multiselect": false
@@ -761,13 +761,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which AI-driven technology helps SOC teams predict cyberattacks before they occur?",
     "options": {
-      "A": "Threat Hunting",
-      "B": "Predictive Analytics",
-      "C": "Network Address Translation (NAT)",
-      "D": "Privileged Access Management (PAM)"
+      "A": "Predictive Analytics",
+      "B": "Threat Hunting",
+      "C": "Privileged Access Management (PAM)",
+      "D": "Network Address Translation (NAT)"
     },
     "answer": [
-      "B"
+      "A"
     ],
     "explanation": "Predictive analytics is the AI-driven technology specifically designed to help SOC teams\nanticipate cyberattacks. It leverages machine learning algorithms, statistical models, and historical\ndata to identify patterns and forecast future events. By analyzing threat intelligence feeds,\nnetwork telemetry, and past incident data, predictive analytics can identify precursors to an attack,\nassess the risk of specific vulnerabilities being exploited, and predict an adversary's likely next\nmoves. This foresight enables SOC teams to shift from a reactive to a proactive security posture,\nallowing them to reinforce defenses before an attack materializes.\n\n========================================================================================",
     "is_multiselect": false
@@ -778,14 +778,14 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which of the following are key challenges of implementing AI in cybersecurity? (Choose two)",
     "options": {
-      "A": "High false positive rates if models are not trained properly",
-      "B": "AI makes security analysts obsolete",
-      "C": "AI requires large volumes of high-quality training data",
-      "D": "AI can guarantee 100% protection from cyber threats"
+      "A": "AI requires large volumes of high-quality training data",
+      "B": "High false positive rates if models are not trained properly",
+      "C": "AI can guarantee 100% protection from cyber threats",
+      "D": "AI makes security analysts obsolete"
     },
     "answer": [
       "A",
-      "C"
+      "B"
     ],
     "explanation": "Two primary challenges in implementing AI for cybersecurity are the high potential for false\npositives and the dependency on vast amounts of high-quality data. If an AI model is not trained\non a sufficiently large, diverse, and accurately labeled dataset (C), it will struggle to distinguish\nbetween benign anomalies and genuine threats, leading to a high rate of false positives (A). This\ninundates security analysts with alerts, causing alert fatigue and potentially causing them to miss\nactual threats. The process of acquiring, cleaning, and labeling the necessary data is a significant\noperational and resource-intensive hurdle for many organizations.\n\n========================================================================================",
     "is_multiselect": true
@@ -796,13 +796,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "How does AI-driven automation help reduce SOC workload?",
     "options": {
-      "A": "By automatically prioritizing and triaging security alerts",
+      "A": "By only allowing known applications to run",
       "B": "By blocking all incoming internet traffic",
       "C": "By removing the need for security teams",
-      "D": "By only allowing known applications to run"
+      "D": "By automatically prioritizing and triaging security alerts"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "AI-driven automation, a core component of modern Security Operations Center (SOC) platforms\nlike Cortex XSIAM, significantly reduces analyst workload by autonomously handling high-volume,\nlow-level tasks. It ingests vast amounts of alert data, correlates related events, and uses machine\nlearning models to score and prioritize incidents based on risk and severity. This allows human\nanalysts to focus their expertise on the most critical threats that require complex investigation and\nresponse, rather than manually sifting through thousands of individual, low-fidelity alerts. This\nprocess is often referred to as alert triage and incident prioritization.\n\n========================================================================================",
     "is_multiselect": false
@@ -813,13 +813,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which AI technique is most effective for detecting insider threats?",
     "options": {
-      "A": "Static rule-based analysis",
-      "B": "Behavioral anomaly detection",
-      "C": "Simple IP filtering",
+      "A": "Behavioral anomaly detection",
+      "B": "Simple IP filtering",
+      "C": "Static rule-based analysis",
       "D": "Signature-based threat detection"
     },
     "answer": [
-      "B"
+      "A"
     ],
     "explanation": "Behavioral anomaly detection is the most effective AI technique for identifying insider threats. This\nmethod, central to User and Entity Behavior Analytics (UEBA), establishes a baseline of normal\nactivity for each user and system. It then uses machine learning algorithms to monitor for\ndeviations from this baseline, such as accessing unusual files, logging in at odd hours, or\nescalating privileges. Since insiders already have legitimate access, their malicious activities often\ndon't trigger signature-based or simple rule-based alerts. Instead, it is the anomalous change in\ntheir behavior that indicates a potential threat, which UEBA is specifically designed to detect.\n\n========================================================================================",
     "is_multiselect": false
@@ -830,13 +830,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which of the following is a disadvantage of AI-based security solutions?",
     "options": {
-      "A": "AI can replace human analysts completely",
-      "B": "AI is ineffective in detecting unknown threats",
-      "C": "AI may produce false positives without proper tuning",
-      "D": "AI does not require any data to function"
+      "A": "AI does not require any data to function",
+      "B": "AI can replace human analysts completely",
+      "C": "AI is ineffective in detecting unknown threats",
+      "D": "AI may produce false positives without proper tuning"
     },
     "answer": [
-      "C"
+      "D"
     ],
     "explanation": "A significant disadvantage of AI-based security solutions is their potential to generate false\npositives if not properly trained and tuned. AI models learn to distinguish malicious from benign\nactivity based on the data they are fed. If the training data is not representative of the specific\nnetwork environment, or if the detection thresholds are too sensitive, the model may incorrectly\nflag legitimate, but unusual, activities as threats. Continuous tuning, feedback loops where\nanalysts confirm or deny alerts, and environment-specific model training are essential to minimize\nthese false positives and build trust in the AI system.\n\n========================================================================================",
     "is_multiselect": false
@@ -847,13 +847,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "How does Machine Learning help reduce false positives in threat detection?",
     "options": {
-      "A": "By refining detection models based on historical attack data",
-      "B": "By preventing all network traffic from unknown sources",
-      "C": "By disabling security alerts from low-priority sources",
-      "D": "By applying the same detection rules to all environments"
+      "A": "By preventing all network traffic from unknown sources",
+      "B": "By disabling security alerts from low-priority sources",
+      "C": "By applying the same detection rules to all environments",
+      "D": "By refining detection models based on historical attack data"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Machine Learning (ML) reduces false positives by continuously learning from data and refining its\ndetection models. By analyzing vast amounts of historical data, including both malicious attacks\n(true positives) and benign activities that were incorrectly flagged (false positives), the ML model\nlearns to better distinguish between them. When an analyst provides feedback on an alert (e.g.,\nmarking it as a false positive), this information is used to retrain and adjust the model's\nparameters. This iterative learning process improves the model's accuracy over time, making it\nmore precise in identifying genuine threats while ignoring normal, benign variations in activity.\n\n========================================================================================",
     "is_multiselect": false
@@ -864,13 +864,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which of the following best describes AI-powered security analytics?",
     "options": {
-      "A": "Automates the identification of patterns and anomalies in security data",
+      "A": "Automatically blocks all incoming network traffic",
       "B": "Manages financial transactions for organizations",
       "C": "Ensures zero vulnerabilities in all systems",
-      "D": "Automatically blocks all incoming network traffic"
+      "D": "Automates the identification of patterns and anomalies in security data"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "AI-powered security analytics leverages machine learning algorithms to process vast amounts of\nsecurity data from diverse sources. Its primary function is to autonomously identify complex\npatterns, subtle anomalies, and behavioral deviations that indicate potential threats. This process\ngoes beyond simple rule-based detection by learning normal behavior and flagging outliers, thus\nuncovering sophisticated attacks that might otherwise go unnoticed by human analysts. This\nautomation significantly enhances threat detection speed and accuracy within a Security\nOperations Center (SOC).\n\n========================================================================================",
     "is_multiselect": false
@@ -881,13 +881,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which AI-driven technique is used to predict potential cyber threats?",
     "options": {
-      "A": "Supervised Learning",
-      "B": "Predictive Analytics",
+      "A": "Predictive Analytics",
+      "B": "Risk-Free AI",
       "C": "Code Compilation",
-      "D": "Risk-Free AI"
+      "D": "Supervised Learning"
     },
     "answer": [
-      "B"
+      "A"
     ],
     "explanation": "Predictive analytics is the specific AI-driven technique focused on forecasting future events based\non historical and current data. In cybersecurity, it is used to anticipate potential threats by\nanalyzing threat intelligence, network activity, and vulnerability data to identify patterns that\nprecede an attack. This allows security teams to proactively implement defensive measures\nagainst likely attack vectors or malware campaigns before they materialize, shifting from a\nreactive to a proactive security posture.\n\n========================================================================================",
     "is_multiselect": false
@@ -899,9 +899,9 @@
     "stem": "Which Machine Learning method is commonly used for detecting anomalies in large-scale security data?",
     "options": {
       "A": "K-Means Clustering",
-      "B": "Regression Analysis",
+      "B": "Simple IP Filtering",
       "C": "Network Address Translation (NAT)",
-      "D": "Simple IP Filtering"
+      "D": "Regression Analysis"
     },
     "answer": [
       "A"
@@ -916,9 +916,9 @@
     "stem": "How does AI-driven automation help SOC teams during a security incident?",
     "options": {
       "A": "By automatically categorizing and prioritizing alerts",
-      "B": "By manually requiring human intervention for each case",
-      "C": "By deactivating all security controls during an incident",
-      "D": "By preventing AI-based solutions from learning new patterns"
+      "B": "By deactivating all security controls during an incident",
+      "C": "By preventing AI-based solutions from learning new patterns",
+      "D": "By manually requiring human intervention for each case"
     },
     "answer": [
       "A"
@@ -932,13 +932,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "What is a major risk of using AI in cybersecurity without human oversight?",
     "options": {
-      "A": "AI may generate false positives and incorrect threat classifications",
-      "B": "AI will fully eliminate cyber threats",
+      "A": "AI does not require periodic updates",
+      "B": "AI may generate false positives and incorrect threat classifications",
       "C": "AI makes security analysts redundant",
-      "D": "AI does not require periodic updates"
+      "D": "AI will fully eliminate cyber threats"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "A significant risk of relying solely on AI in cybersecurity is its propensity for errors. AI models,\nparticularly in machine learning, are probabilistic and can misinterpret benign activities as\nmalicious (false positives) or fail to identify genuine threats (false negatives). Without human\noversight, these errors can lead to blocking legitimate traffic, disrupting business operations, or\nallowing attacks to go unnoticed. Human analysts are crucial for validating AI-generated alerts,\nproviding context, and tuning the models to improve accuracy and reduce the impact of these\ninherent limitations.\n\n========================================================================================",
     "is_multiselect": false
@@ -950,9 +950,9 @@
     "stem": "Which of the following is an example of AI being used for endpoint security?",
     "options": {
       "A": "AI-driven behavior-based malware detection",
-      "B": "Manual software patching",
-      "C": "Static rule-based firewall configuration",
-      "D": "Basic log storage without analysis"
+      "B": "Basic log storage without analysis",
+      "C": "Manual software patching",
+      "D": "Static rule-based firewall configuration"
     },
     "answer": [
       "A"
@@ -983,13 +983,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which AI technique enhances phishing detection in email security?",
     "options": {
-      "A": "Natural Language Processing (NLP)",
-      "B": "Static IP filtering",
-      "C": "Signature-based rule matching",
-      "D": "Network Address Translation (NAT)"
+      "A": "Static IP filtering",
+      "B": "Signature-based rule matching",
+      "C": "Network Address Translation (NAT)",
+      "D": "Natural Language Processing (NLP)"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Natural Language Processing (NLP) is a specialized field of AI that significantly enhances\nphishing detection. Traditional methods rely on blacklisting senders or matching signatures, which\nare easily bypassed. NLP models, however, analyze the actual content and context of an email.\nThey can detect subtle linguistic cues common in phishing attacks, such as a sense of urgency\n(\"act now!\"), unusual requests for sensitive information, grammatical errors, or attempts to\nimpersonate a trusted entity (brand or person). By understanding the intent behind the text, NLP\nprovides a more robust defense against sophisticated and novel phishing campaigns.\n\n========================================================================================",
     "is_multiselect": false
@@ -1000,13 +1000,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which of the following is a real-world example of AI-powered cybersecurity?",
     "options": {
-      "A": "AI-enhanced Endpoint Detection and Response (EDR)",
-      "B": "Manual network traffic analysis",
-      "C": "IT helpdesk automation",
-      "D": "Employee attendance tracking"
+      "A": "IT helpdesk automation",
+      "B": "Employee attendance tracking",
+      "C": "Manual network traffic analysis",
+      "D": "AI-enhanced Endpoint Detection and Response (EDR)"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "AI-enhanced Endpoint Detection and Response (EDR) is a prime real-world application of AI in\ncybersecurity. Platforms like Cortex XDR use machine learning algorithms to analyze endpoint\ndata (processes, file activity, network connections) in real-time. This allows the system to identify\nand respond to sophisticated threats, such as fileless malware and zero-day exploits, by detecting\nanomalous behaviors that would be missed by traditional signature-based antivirus solutions. The\nAI component provides the scale and speed necessary to analyze billions of events and pinpoint\nmalicious activity.\n\n========================================================================================",
     "is_multiselect": false
@@ -1017,13 +1017,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "What is a key benefit of using AI-powered deception technology in cybersecurity?",
     "options": {
-      "A": "It creates decoy environments to detect attackers early",
-      "B": "It blocks all outbound network traffic",
+      "A": "It replaces human cybersecurity teams",
+      "B": "It creates decoy environments to detect attackers early",
       "C": "It prevents users from accessing external websites",
-      "D": "It replaces human cybersecurity teams"
+      "D": "It blocks all outbound network traffic"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "The primary benefit of AI-powered deception technology is its ability to create highly realistic\ndecoy assets, credentials, and network environments to lure and misdirect attackers. By engaging\nwith these decoys, attackers reveal their presence, tactics, and techniques early in the attack\nlifecycle. AI enhances deception by making the decoys dynamic and believable, adapting them to\nthe network environment and attacker interactions. This provides high-fidelity alerts with very low\nfalse-positive rates, allowing security teams to respond before critical assets are compromised.\n\n========================================================================================",
     "is_multiselect": false
@@ -1034,13 +1034,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which technique can help identify malware-related activity in encrypted traffic when payload inspection is unavailable?",
     "options": {
-      "A": "Payload-only deep packet inspection",
-      "B": "Behavioral and traffic-metadata analysis",
-      "C": "Static rule matching only",
-      "D": "Port-based filtering only"
+      "A": "Behavioral and traffic-metadata analysis",
+      "B": "Static rule matching only",
+      "C": "Port-based filtering only",
+      "D": "Payload-only deep packet inspection"
     },
     "answer": [
-      "B"
+      "A"
     ],
     "explanation": "Behavioral analysis, powered by AI and machine learning, is a key technique for detecting threats\nin encrypted traffic without requiring decryption. Instead of inspecting the payload, this method\nanalyzes metadata and traffic characteristics, such as session duration, data volume, certificate\ninformation, client application, and the sequence of connections (e.g., to a command-and-control\nserver). AI models are trained to recognize patterns in this metadata that are indicative of\nmalware, botnets, or other malicious activities, allowing for detection while preserving privacy and\nperformance.\n\n========================================================================================",
     "is_multiselect": false
@@ -1051,13 +1051,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which AI-powered security approach helps detect and prevent insider threats?",
     "options": {
-      "A": "User and Entity Behavior Analytics (UEBA)",
-      "B": "Intrusion Prevention System (IPS)",
-      "C": "Content Delivery Network (CDN)",
-      "D": "Network Address Translation (NAT)"
+      "A": "Network Address Translation (NAT)",
+      "B": "Content Delivery Network (CDN)",
+      "C": "User and Entity Behavior Analytics (UEBA)",
+      "D": "Intrusion Prevention System (IPS)"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "User and Entity Behavior Analytics (UEBA) is an AI-powered security approach that baselines\nnormal behavior for users and devices on a network. It uses machine learning algorithms to\ndetect anomalous activities that deviate from these established patterns. This is highly effective\nfor identifying insider threats, whether malicious or accidental, as these threats often manifest as\nunusual but legitimate-looking user actions that traditional security tools might miss. Palo Alto's\nCortex XDR incorporates UEBA capabilities to detect such threats by analyzing diverse data\nsources and flagging high-risk behaviors.\n\n========================================================================================",
     "is_multiselect": false
@@ -1068,13 +1068,13 @@
     "objective": "1.4 - AI and machine learning in security operations",
     "stem": "Which technique can help detect ransomware by identifying suspicious endpoint behavior before relying on a known file hash?",
     "options": {
-      "A": "Behavior-based ransomware detection",
-      "B": "Manual backup restoration",
-      "C": "Static file-hash matching only",
-      "D": "A simple firewall rule with no endpoint telemetry"
+      "A": "Manual backup restoration",
+      "B": "A simple firewall rule with no endpoint telemetry",
+      "C": "Behavior-based ransomware detection",
+      "D": "Static file-hash matching only"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "AI-powered behavioral detection is the most effective technique against modern ransomware.\nInstead of relying on static signatures of known ransomware files, this approach uses machine\nlearning models to monitor for the behaviors characteristic of a ransomware attack in real-time.\nThese behaviors include rapid and widespread file encryption, deletion of volume shadow copies,\nand attempts to disable security software. Palo Alto's Cortex XDR uses a multi-layered behavioral\nanalytics approach to detect and block these malicious sequences of events, terminating the\nransomware process before significant encryption can occur.\n\n========================================================================================",
     "is_multiselect": false
@@ -1087,8 +1087,8 @@
     "options": {
       "A": "A structured process for detecting, responding to, and mitigating security threats",
       "B": "A strategy to permanently eliminate all cyber threats",
-      "C": "A passive approach to monitoring security logs",
-      "D": "An automatic process that requires no human intervention"
+      "C": "An automatic process that requires no human intervention",
+      "D": "A passive approach to monitoring security logs"
     },
     "answer": [
       "A"
@@ -1102,13 +1102,13 @@
     "objective": "2.2 - Incident management and response",
     "stem": "Which security framework does incident management commonly align with?",
     "options": {
-      "A": "NIST Cybersecurity Framework",
-      "B": "Agile Software Development",
+      "A": "Enterprise Resource Planning",
+      "B": "NIST Cybersecurity Framework",
       "C": "Marketing Optimization Strategies",
-      "D": "Enterprise Resource Planning"
+      "D": "Agile Software Development"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Incident management is a core operational capability that aligns directly with major security\nframeworks, most notably the NIST Cybersecurity Framework (CSF). The NIST CSF is organized\ninto five core functions: Identify, Protect, Detect, Respond, and Recover. The \"Respond\" and\n\"Recover\" functions directly map to the activities within an incident management or incident\nresponse plan. The \"Respond\" function includes response planning, communications, analysis,\nmitigation, and improvements, which are all integral parts of a structured incident management\nprocess. Aligning with such frameworks provides a standardized, best-practice approach.\n\n========================================================================================",
     "is_multiselect": false
@@ -1119,13 +1119,13 @@
     "objective": "2.2 - Incident management and response",
     "stem": "What is the primary goal of an Incident Response Team (IRT)?",
     "options": {
-      "A": "To manage and coordinate security incidents within an organization",
+      "A": "To replace existing firewall configurations",
       "B": "To conduct daily software updates",
-      "C": "To replace existing firewall configurations",
+      "C": "To manage and coordinate security incidents within an organization",
       "D": "To create financial reports"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "The primary goal of an Incident Response Team (IRT), also known as a Computer Security\nIncident Response Team (CSIRT), is to manage the entire lifecycle of a security incident. This\nincludes preparation, detection, analysis, containment, eradication, and recovery. The IRT acts as\nthe central point of coordination and expertise, ensuring that security breaches are handled\nefficiently to minimize operational impact, financial loss, and reputational damage to the\norganization. Their function is to provide a structured and effective response rather than an\nad-hoc one.\n\n========================================================================================",
     "is_multiselect": false
@@ -1136,13 +1136,13 @@
     "objective": "2.2 - Incident management and response",
     "stem": "Which of the following is a best practice in incident response?",
     "options": {
-      "A": "Implementing an incident response plan before an attack occurs",
-      "B": "Reacting to incidents without a structured approach",
-      "C": "Ignoring minor security alerts to avoid overloading SOC teams",
+      "A": "Reacting to incidents without a structured approach",
+      "B": "Ignoring minor security alerts to avoid overloading SOC teams",
+      "C": "Implementing an incident response plan before an attack occurs",
       "D": "Only involving IT teams when an attack impacts business operations"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "A core tenet of effective incident response is proactive preparation. Implementing a formal\nincident response plan (IRP) before an incident occurs is a critical best practice. An IRP provides\na structured framework that outlines roles, responsibilities, communication protocols, and\nstep-by-step procedures. This preparation ensures a consistent, efficient, and coordinated\nresponse, which minimizes panic and mistakes during a high-stress event. A well-defined plan\nreduces recovery time and the overall impact of an attack.\n\n========================================================================================",
     "is_multiselect": false
@@ -1153,13 +1153,13 @@
     "objective": "2.2 - Incident management and response",
     "stem": "Which tool is commonly used for incident detection and analysis?",
     "options": {
-      "A": "SIEM (Security Information and Event Management)",
+      "A": "HR Attendance Tracker",
       "B": "CRM (Customer Relationship Management)",
       "C": "ERP (Enterprise Resource Planning)",
-      "D": "HR Attendance Tracker"
+      "D": "SIEM (Security Information and Event Management)"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "A Security Information and Event Management (SIEM) system is a cornerstone technology for\nincident detection and analysis in a Security Operations Center (SOC). SIEMs collect, aggregate,\nand correlate log and event data from a wide array of sources across the IT environment. This\ncentralized visibility allows security analysts to detect anomalies, identify potential threats through\nrule-based alerts and user behavior analytics, and conduct investigations into security incidents. It\nprovides the context and data necessary for effective analysis and response.\n\n========================================================================================",
     "is_multiselect": false
@@ -1171,9 +1171,9 @@
     "stem": "Why is communication important during incident response?",
     "options": {
       "A": "It ensures clear coordination between teams and stakeholders",
-      "B": "It prevents legal teams from accessing reports",
-      "C": "It automatically resolves security incidents",
-      "D": "It eliminates the need for SOC teams"
+      "B": "It eliminates the need for SOC teams",
+      "C": "It prevents legal teams from accessing reports",
+      "D": "It automatically resolves security incidents"
     },
     "answer": [
       "A"
@@ -1187,13 +1187,13 @@
     "objective": "2.2 - Incident management and response",
     "stem": "Which of the following defines an Indicator of Compromise (IOC)?",
     "options": {
-      "A": "A piece of evidence that suggests a system has been breached",
-      "B": "A firewall rule that blocks internal traffic",
+      "A": "A firewall rule that blocks internal traffic",
+      "B": "A piece of evidence that suggests a system has been breached",
       "C": "A training program for new employees",
       "D": "A list of approved software applications"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "An Indicator of Compromise (IOC) is a forensic artifact or piece of evidence found on a network or\nhost that indicates a security breach has likely occurred. Security and threat intelligence teams\nuse IOCs, such as unusual outbound network traffic, anomalous privileged user account activity,\nmalicious IP addresses, or specific file hashes, to detect intrusions. IOCs serve as the digital\nbreadcrumbs that help investigators identify, scope, and contain a security incident.\n\n========================================================================================",
     "is_multiselect": false
@@ -1204,13 +1204,13 @@
     "objective": "2.2 - Incident management and response",
     "stem": "Which of the following best describes containment in incident response?",
     "options": {
-      "A": "Isolating affected systems to prevent further damage",
+      "A": "Notifying all employees about the breach immediately",
       "B": "Restoring systems before conducting an investigation",
-      "C": "Notifying all employees about the breach immediately",
-      "D": "Blocking all network traffic regardless of impact"
+      "C": "Blocking all network traffic regardless of impact",
+      "D": "Isolating affected systems to prevent further damage"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Containment is the phase of incident response dedicated to preventing an ongoing security\nincident from spreading and causing additional damage. The primary objective is to limit the\nadversary's access and impact. This is achieved through actions such as isolating compromised\nhosts from the network, blocking traffic from malicious IP addresses, or disabling breached user\naccounts. An effective containment strategy is crucial for stabilizing the situation and providing the\nresponse team with the time needed to investigate and eradicate the threat.\n\n========================================================================================",
     "is_multiselect": false
@@ -1221,13 +1221,13 @@
     "objective": "2.2 - Incident management and response",
     "stem": "Why is documentation a critical step in incident response?",
     "options": {
-      "A": "It provides a record for forensic investigation and compliance audits",
-      "B": "It allows security teams to ignore minor incidents",
-      "C": "It replaces the need for an actual response team",
-      "D": "It ensures that all employees become SOC analysts"
+      "A": "It allows security teams to ignore minor incidents",
+      "B": "It ensures that all employees become SOC analysts",
+      "C": "It provides a record for forensic investigation and compliance audits",
+      "D": "It replaces the need for an actual response team"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Comprehensive documentation is a cornerstone of a mature incident response process. It creates\nan authoritative, chronological record of all actions taken, decisions made, and evidence collected\nduring an incident. This record is indispensable for post-incident analysis, which helps in refining\nsecurity controls and response procedures. Furthermore, this documentation serves as critical\nevidence for forensic investigations, supports legal proceedings if necessary, and demonstrates\ndue diligence and compliance with regulatory frameworks such as GDPR, HIPAA, or PCI DSS\nduring audits.\n\n========================================================================================",
     "is_multiselect": false
@@ -1238,13 +1238,13 @@
     "objective": "2.2 - Incident management and response",
     "stem": "Which of the following is a key challenge in incident response?",
     "options": {
-      "A": "Alert fatigue due to excessive security notifications",
-      "B": "Lack of marketing strategy in cybersecurity teams",
-      "C": "Too many financial reports in SOC dashboards",
-      "D": "Restricting all users from accessing corporate resources"
+      "A": "Too many financial reports in SOC dashboards",
+      "B": "Restricting all users from accessing corporate resources",
+      "C": "Alert fatigue due to excessive security notifications",
+      "D": "Lack of marketing strategy in cybersecurity teams"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Alert fatigue is a significant challenge in modern Security Operations Centers (SOCs). It occurs\nwhen security analysts are overwhelmed by a high volume of security alerts, many of which may\nbe false positives. This constant stream of notifications can desensitize analysts, leading to\nslower response times, missed critical alerts, and increased analyst burnout. Managing and\nprioritizing this flood of data is a key operational problem that solutions like Security\nOrchestration, Automation, and Response (SOAR) platforms aim to address by automating triage\nand enriching alerts.\n\n========================================================================================",
     "is_multiselect": false
@@ -1255,13 +1255,13 @@
     "objective": "2.2 - Incident management and response",
     "stem": "Which of the following is a benefit of having a well-defined Incident Response Plan (IRP)?",
     "options": {
-      "A": "Reduces response time and minimizes business disruption",
-      "B": "Eliminates the need for a cybersecurity team",
-      "C": "Prevents all cyber incidents permanently",
-      "D": "Ensures that all incidents can be ignored"
+      "A": "Prevents all cyber incidents permanently",
+      "B": "Reduces response time and minimizes business disruption",
+      "C": "Ensures that all incidents can be ignored",
+      "D": "Eliminates the need for a cybersecurity team"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "A well-defined Incident Response Plan (IRP) provides a structured, systematic approach for\nhandling security incidents. By pre-defining roles, responsibilities, communication channels, and\nresponse procedures, an IRP eliminates ambiguity and guesswork during a crisis. This structured\napproach enables the security team to act quickly and decisively, which significantly reduces the\ntime required to detect, contain, and recover from an incident. Consequently, this minimizes the\nincident's impact, including financial loss, data exposure, and disruption to critical business\noperations.\n\n========================================================================================",
     "is_multiselect": false
@@ -1272,13 +1272,13 @@
     "objective": "2.3 - Threat intelligence in incident response",
     "stem": "What is the primary role of threat intelligence in incident response?",
     "options": {
-      "A": "Providing context about emerging threats and attack patterns",
-      "B": "Blocking all network traffic by default",
-      "C": "Automatically removing all false positives",
-      "D": "Preventing employees from accessing external websites"
+      "A": "Preventing employees from accessing external websites",
+      "B": "Providing context about emerging threats and attack patterns",
+      "C": "Blocking all network traffic by default",
+      "D": "Automatically removing all false positives"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "The primary role of threat intelligence is to provide security teams with data-driven context about\nthreat actors, their motivations, capabilities, and the infrastructure they use. During an incident,\nthis intelligence enriches raw security alerts with information on indicators of compromise (IOCs)\nand tactics, techniques, and procedures (TTPs). This context enables responders to understand\nthe nature of the threat, predict adversary movements, and make faster, more informed decisions\nfor containment and remediation.\n\n========================================================================================",
     "is_multiselect": false
@@ -1289,13 +1289,13 @@
     "objective": "2.3 - Threat intelligence in incident response",
     "stem": "How does threat intelligence improve incident response?",
     "options": {
-      "A": "It enhances threat detection by providing real-time IOCs and TTPs",
-      "B": "It eliminates the need for security teams",
-      "C": "It removes all security alerts automatically",
-      "D": "It blocks all inbound and outbound traffic"
+      "A": "It removes all security alerts automatically",
+      "B": "It blocks all inbound and outbound traffic",
+      "C": "It eliminates the need for security teams",
+      "D": "It enhances threat detection by providing real-time IOCs and TTPs"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Threat intelligence significantly improves incident response by making it more proactive and\nefficient. It provides real-time Indicators of Compromise (IOCs), such as malicious IP addresses,\ndomains, and file hashes, which enhance detection capabilities. Furthermore, by supplying\ninsights into adversary Tactics, Techniques, and Procedures (TTPs), it allows security teams to\nbetter understand attack patterns, anticipate an attacker's next steps, and implement more\neffective response and mitigation strategies.\n\n========================================================================================",
     "is_multiselect": false
@@ -1306,13 +1306,13 @@
     "objective": "2.4 - Case categorization and prioritization",
     "stem": "What is the purpose of incident categorization in incident response?",
     "options": {
-      "A": "To classify security incidents based on severity and impact",
-      "B": "To remove alerts from SIEM logs",
+      "A": "To remove alerts from SIEM logs",
+      "B": "To block all external emails",
       "C": "To automate all security responses without human intervention",
-      "D": "To block all external emails"
+      "D": "To classify security incidents based on severity and impact"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "The purpose of incident categorization is to systematically classify and prioritize security\nincidents. This is done by evaluating them against a predefined schema based on factors like\nincident type (e.g., malware, phishing, denial-of-service), severity, and potential business impact.\nEffective categorization ensures that limited security resources are focused on the most critical\nthreats first, enabling a more organized, efficient, and timely response process. It is a foundational\nstep in the incident handling lifecycle.\n\n========================================================================================",
     "is_multiselect": false
@@ -1323,14 +1323,14 @@
     "objective": "2.4 - Case categorization and prioritization",
     "stem": "Which of the following are key factors in incident prioritization? (Choose two)",
     "options": {
-      "A": "Impact on business operations",
-      "B": "Sensitivity of affected data",
-      "C": "Number of emails sent per day",
-      "D": "Employee job titles"
+      "A": "Sensitivity of affected data",
+      "B": "Number of emails sent per day",
+      "C": "Employee job titles",
+      "D": "Impact on business operations"
     },
     "answer": [
       "A",
-      "B"
+      "D"
     ],
     "explanation": "Incident prioritization is a critical step in incident response that involves assessing the urgency\nand potential harm of a security incident to determine the order of response. The primary factors\nare the incident's functional or business impact (e.g., disruption to critical services, financial loss)\nand its informational impact, which relates to the sensitivity of the data affected (e.g., exposure of\nPII, intellectual property, or classified information). These factors directly measure the potential\ndamage to the organization, guiding security teams to address the most critical threats first.\n\n========================================================================================",
     "is_multiselect": true
@@ -1342,8 +1342,8 @@
     "stem": "What is the primary role of tactical threat intelligence?",
     "options": {
       "A": "Providing real-time IOCs to improve security detection",
-      "B": "Predicting financial market trends",
-      "C": "Managing cloud infrastructure",
+      "B": "Managing cloud infrastructure",
+      "C": "Predicting financial market trends",
       "D": "Enhancing HR payroll processes"
     },
     "answer": [
@@ -1358,14 +1358,14 @@
     "objective": "2.3 - Threat intelligence in incident response",
     "stem": "Which of the following are common incident categories? (Choose two)",
     "options": {
-      "A": "Malware infections",
-      "B": "Unauthorized access",
-      "C": "Number of social media posts",
-      "D": "Marketing campaign effectiveness"
+      "A": "Number of social media posts",
+      "B": "Malware infections",
+      "C": "Marketing campaign effectiveness",
+      "D": "Unauthorized access"
     },
     "answer": [
-      "A",
-      "B"
+      "B",
+      "D"
     ],
     "explanation": "Incident categories are used to classify security incidents for effective tracking, response, and\nreporting. \"Malware infections\" and \"Unauthorized access\" are two of the most fundamental and\nwidely recognized categories in incident response frameworks. Malware refers to incidents\ninvolving malicious software like viruses, worms, and ransomware. Unauthorized access pertains\nto any instance where an individual or system gains logical or physical access to a network,\nsystem, or data without permission. These classifications help standardize the initial stages of\nincident handling.\n\n========================================================================================",
     "is_multiselect": true
@@ -1376,13 +1376,13 @@
     "objective": "2.3 - Threat intelligence in incident response",
     "stem": "Which standards pair is commonly used to structure and exchange cyberthreat intelligence?",
     "options": {
-      "A": "STIX and TAXII",
-      "B": "PCI DSS",
-      "C": "ISO 9001",
-      "D": "Agile development"
+      "A": "ISO 9001",
+      "B": "STIX and TAXII",
+      "C": "Agile development",
+      "D": "PCI DSS"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "The STIX/TAXII framework is the industry standard for sharing threat intelligence. STIX\n(Structured Threat Information eXpression) is a standardized language used to describe cyber\nthreat information in a structured, machine-readable format. TAXII (Trusted Automated eXchange\nof Intelligence Information) is an application protocol designed to transport STIX data over\nHTTPS. Together, they enable organizations and security tools to automatically share and\nconsume threat intelligence, facilitating collaborative defense and faster response to emerging\nthreats.\n\n========================================================================================",
     "is_multiselect": false
@@ -1394,8 +1394,8 @@
     "stem": "Which tool helps analyze and correlate threat intelligence in security operations?",
     "options": {
       "A": "Threat Intelligence Platform (TIP)",
-      "B": "Social Media Analytics Tool",
-      "C": "Email Marketing Software",
+      "B": "Email Marketing Software",
+      "C": "Social Media Analytics Tool",
       "D": "Human Resources Management System"
     },
     "answer": [
@@ -1411,9 +1411,9 @@
     "stem": "How does strategic threat intelligence differ from tactical threat intelligence?",
     "options": {
       "A": "Strategic intelligence focuses on long-term trends and business risk, while tactical intelligence focuses on adversary methods and indicators",
-      "B": "Strategic intelligence provides only individual IP addresses for blocking",
-      "C": "Strategic intelligence immediately stops attacks in progress",
-      "D": "Strategic intelligence removes the need for analysts"
+      "B": "Strategic intelligence removes the need for analysts",
+      "C": "Strategic intelligence provides only individual IP addresses for blocking",
+      "D": "Strategic intelligence immediately stops attacks in progress"
     },
     "answer": [
       "A"
@@ -1427,13 +1427,13 @@
     "objective": "2.3 - Threat intelligence in incident response",
     "stem": "Why is automated threat intelligence integration important in a SOC?",
     "options": {
-      "A": "It reduces response time by providing real-time threat context",
-      "B": "It replaces the need for human analysts",
-      "C": "It disables all non-critical security tools",
-      "D": "It prevents users from accessing security dashboards"
+      "A": "It disables all non-critical security tools",
+      "B": "It prevents users from accessing security dashboards",
+      "C": "It reduces response time by providing real-time threat context",
+      "D": "It replaces the need for human analysts"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "In a Security Operations Center (SOC), analysts are often overwhelmed by a high volume of\nalerts. Automated threat intelligence integration addresses this by automatically enriching security\nalerts with context from various intelligence sources in real-time. When an alert is generated, a\nSOAR platform like Cortex XSOAR can instantly query threat intelligence feeds for information on\nthe associated IPs, domains, or file hashes. This provides the analyst with immediate context on\nwhether the indicator is known-bad, its reputation, and associated campaigns, drastically reducing\nmanual research time (Mean Time to Respond - MTTR) and enabling faster, more accurate\ndecision-making.\n\n========================================================================================",
     "is_multiselect": false
@@ -1444,13 +1444,13 @@
     "objective": "2.4 - Case categorization and prioritization",
     "stem": "What is the function of risk scoring in incident prioritization?",
     "options": {
-      "A": "Assigning a severity level based on impact and likelihood",
-      "B": "Randomly categorizing alerts",
-      "C": "Deleting false positives without review",
-      "D": "Restricting all network access after an alert"
+      "A": "Restricting all network access after an alert",
+      "B": "Deleting false positives without review",
+      "C": "Assigning a severity level based on impact and likelihood",
+      "D": "Randomly categorizing alerts"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Risk scoring in incident prioritization is the process of assigning a value, typically numerical or a\ncategory like High/Medium/Low, to a security alert or incident. This score is calculated based on\nfactors such as the potential business impact of the affected asset, the likelihood of the threat\nbeing successful, and the severity of the vulnerability or attack technique. This systematic\napproach allows a SOC to triage a large volume of alerts effectively, ensuring that analysts focus\ntheir immediate attention on the incidents that pose the greatest risk to the organization, thereby\noptimizing resource allocation and minimizing potential damage.\n\n========================================================================================",
     "is_multiselect": false
@@ -1461,13 +1461,13 @@
     "objective": "2.3 - Threat intelligence in incident response",
     "stem": "Which of the following is an example of threat intelligence enrichment?",
     "options": {
-      "A": "Adding contextual data to an IOC for better analysis",
-      "B": "Deleting logs to reduce storage requirements",
-      "C": "Ignoring low-priority alerts",
-      "D": "Allowing all incoming emails without filtering"
+      "A": "Deleting logs to reduce storage requirements",
+      "B": "Allowing all incoming emails without filtering",
+      "C": "Adding contextual data to an IOC for better analysis",
+      "D": "Ignoring low-priority alerts"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Threat intelligence enrichment is the process of augmenting raw security data, such as an\nIndicator of Compromise (IOC), with additional context. This context can include details about the\nthreat actor, associated malware families, attack campaigns (TTPs), or geographical origin. The\ngoal is to transform a simple data point (e.g., an IP address) into actionable intelligence, enabling\nsecurity analysts to make faster, more informed decisions during an investigation and response.\nThis process is a core function within Security Orchestration, Automation, and Response (SOAR)\nplatforms like Cortex XSOAR.\n\n========================================================================================",
     "is_multiselect": false
@@ -1478,8 +1478,8 @@
     "objective": "2.3 - Threat intelligence in incident response",
     "stem": "Which of the following are key benefits of integrating threat intelligence into incident response? (Choose two)",
     "options": {
-      "A": "Enhances threat detection accuracy",
-      "B": "Reduces false positives in security alerts",
+      "A": "Reduces false positives in security alerts",
+      "B": "Enhances threat detection accuracy",
       "C": "Blocks all internet traffic automatically",
       "D": "Eliminates the need for firewalls"
     },
@@ -1496,13 +1496,13 @@
     "objective": "2.3 - Threat intelligence in incident response",
     "stem": "Which of the following best describes an Indicator of Attack (IOA)?",
     "options": {
-      "A": "A behavioral pattern that suggests an ongoing cyberattack",
-      "B": "A static IP address used in network security policies",
+      "A": "A static IP address used in network security policies",
+      "B": "A marketing campaign metric",
       "C": "A predefined firewall rule",
-      "D": "A marketing campaign metric"
+      "D": "A behavioral pattern that suggests an ongoing cyberattack"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "An Indicator of Attack (IOA) focuses on the intent and sequence of actions an adversary takes to\nachieve their objective, regardless of the specific tools or malware used. Unlike Indicators of\nCompromise (IOCs), which are static artifacts (e.g., a file hash or IP address), IOAs are\nbehavioral. They represent patterns of activity, such as a process executing PowerShell to\nperform lateral movement or a user account attempting to access and exfiltrate sensitive data.\nDetecting IOAs allows for earlier identification of an attack, often before significant damage\noccurs.\n\n========================================================================================",
     "is_multiselect": false
@@ -1513,13 +1513,13 @@
     "objective": "2.3 - Threat intelligence in incident response",
     "stem": "How does machine learning (ML) enhance threat intelligence analysis?",
     "options": {
-      "A": "By automating the correlation of threat data from multiple sources",
-      "B": "By randomly categorizing security alerts",
-      "C": "By preventing SOC teams from accessing intelligence reports",
-      "D": "By replacing all human security analysts"
+      "A": "By replacing all human security analysts",
+      "B": "By preventing SOC teams from accessing intelligence reports",
+      "C": "By automating the correlation of threat data from multiple sources",
+      "D": "By randomly categorizing security alerts"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Machine learning (ML) significantly enhances threat intelligence by automating the analysis and\ncorrelation of massive datasets from diverse sources. ML algorithms can identify complex\npatterns, relationships, and anomalies within threat data that are often missed by human analysts.\nThis process allows for the rapid synthesis of disparate information-such as indicators of\ncompromise (IoCs), tactics, techniques, and procedures (TTPs), and threat actor profiles-into\nactionable intelligence. By automating this correlation, ML helps security teams to proactively\nidentify emerging threats, understand their context, and prioritize responses more effectively. This\ncapability is central to modern Security Operations Centers (SOCs) that leverage platforms like\nCortex XSOAR.\n\n========================================================================================",
     "is_multiselect": false
@@ -1530,13 +1530,13 @@
     "objective": "2.1 - NIST Incident Response Plan",
     "stem": "Which current NIST publication provides incident-response recommendations aligned with the NIST Cybersecurity Framework 2.0?",
     "options": {
-      "A": "NIST SP 800-61 Revision 3",
-      "B": "MITRE ATT&CK",
-      "C": "ISO 9001",
-      "D": "PCI DSS"
+      "A": "ISO 9001",
+      "B": "NIST SP 800-61 Revision 3",
+      "C": "PCI DSS",
+      "D": "MITRE ATT&CK"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "NIST SP 800-61 Revision 3, Incident Response Recommendations and Considerations for Cybersecurity Risk Management, is the current NIST incident-response publication. It superseded Revision 2 and aligns incident response with the six Cybersecurity Framework 2.0 functions: Govern, Identify, Protect, Detect, Respond, and Recover. Revision 3 treats incident response as an organization-wide cybersecurity risk-management activity rather than teaching the older four-phase lifecycle as the current model. Option A is therefore the only current and directly applicable answer.\n\n========================================================================================",
     "is_multiselect": false
@@ -1547,13 +1547,13 @@
     "objective": "2.4 - Case categorization and prioritization",
     "stem": "What is a key advantage of automated incident categorization in a SOC?",
     "options": {
-      "A": "Faster response times and reduced analyst workload",
-      "B": "Prevention of all cyberattacks",
+      "A": "Replacement of incident response teams",
+      "B": "Faster response times and reduced analyst workload",
       "C": "Elimination of the need for security policies",
-      "D": "Replacement of incident response teams"
+      "D": "Prevention of all cyberattacks"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "A key advantage of automated incident categorization in a Security Operations Center (SOC) is\nthe significant improvement in response times and the reduction of analyst workload. Automation,\noften managed by a SOAR (Security Orchestration, Automation, and Response) platform, can\ninstantly classify incoming alerts based on predefined rules and machine learning models. This\neliminates the manual, time-consuming triage process, allowing incidents to be escalated to the\ncorrect teams or handled by automated playbooks immediately. By freeing analysts from this\nrepetitive task, it enables them to concentrate on more complex investigation and threat-hunting\nactivities, thereby increasing overall SOC efficiency and effectiveness.\n\n========================================================================================",
     "is_multiselect": false
@@ -1564,13 +1564,13 @@
     "objective": "2.3 - Threat intelligence in incident response",
     "stem": "Which tool helps in real-time correlation of threat intelligence with security alerts?",
     "options": {
-      "A": "SIEM (Security Information and Event Management)",
-      "B": "Word Processing Software",
-      "C": "Email Marketing Platform",
-      "D": "Data Backup Tool"
+      "A": "Data Backup Tool",
+      "B": "Email Marketing Platform",
+      "C": "Word Processing Software",
+      "D": "SIEM (Security Information and Event Management)"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "A Security Information and Event Management (SIEM) system is the primary tool designed for\nreal-time correlation of threat intelligence with security alerts. SIEM platforms aggregate log data\nand event information from numerous sources across an organization's IT infrastructure. They\nthen enrich this data by cross-referencing it with threat intelligence feeds, which contain known\nindicators of compromise (IoCs) like malicious IP addresses, file hashes, or domains. Using\ncorrelation rules, the SIEM can identify patterns indicative of a security incident in real-time, such\nas a local host communicating with a known command-and-control server, and generate a\nhigh-fidelity alert for security analysts to investigate.\n\n========================================================================================",
     "is_multiselect": false
@@ -1581,13 +1581,13 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "What is the role of file indicators in threat detection?",
     "options": {
-      "A": "Identifying and analyzing malicious files using hash values",
+      "A": "Preventing users from accessing email attachments",
       "B": "Encrypting user documents to enhance security",
-      "C": "Automatically blocking all executable files in a network",
-      "D": "Preventing users from accessing email attachments"
+      "C": "Identifying and analyzing malicious files using hash values",
+      "D": "Automatically blocking all executable files in a network"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "File indicators, a type of Indicator of Compromise (IOC), are crucial for threat detection as they\nprovide specific, verifiable artifacts associated with malicious activity. Security systems like Cortex\nXDR use file indicators, most commonly cryptographic hash values (e.g., SHA-256), to uniquely\nidentify malicious files. When a file's hash matches a known malicious hash from a threat\nintelligence feed, it triggers an alert. This allows security analysts to quickly identify malware,\ntrack its presence across the network, and initiate response actions without needing to analyze\nthe full file content in every instance.\n\n========================================================================================",
     "is_multiselect": false
@@ -1599,13 +1599,13 @@
     "stem": "Which of the following are common file indicators of compromise (IOCs)? (Choose two)",
     "options": {
       "A": "Hash values (MD5, SHA-256)",
-      "B": "File names and extensions",
-      "C": "Employee email signatures",
-      "D": "Marketing campaign metrics"
+      "B": "Employee email signatures",
+      "C": "Marketing campaign metrics",
+      "D": "File names and extensions"
     },
     "answer": [
       "A",
-      "B"
+      "D"
     ],
     "explanation": "Common file indicators of compromise (IOCs) are specific artifacts used to identify malicious files.\nHash values, such as MD5 and SHA-256, are the most reliable file IOCs because they provide a\nunique digital fingerprint for a file. Any change to the file results in a different hash. File names\nand extensions are also common IOCs because attackers often use specific naming conventions\nor deceptive extensions (e.g., report.pdf.exe) to trick users. Security systems use these indicators\nin rules to detect and block known threats.\n\n========================================================================================",
     "is_multiselect": true
@@ -1617,14 +1617,14 @@
     "stem": "When appropriate Cortex indicator rules, policies, telemetry, and licenses are configured, how can IP indicators support threat detection and prevention? (Choose three)",
     "options": {
       "A": "They can be used in prevention rules to block known-malicious IP communications",
-      "B": "They can identify endpoint communications involving specified IP addresses",
+      "B": "They automatically disable all internet access for every user",
       "C": "They can provide context for analysis of network connections and related threats",
-      "D": "They automatically disable all internet access for every user"
+      "D": "They can identify endpoint communications involving specified IP addresses"
     },
     "answer": [
       "A",
-      "B",
-      "C"
+      "C",
+      "D"
     ],
     "explanation": "Cortex XDR leverages IP indicators in a multi-faceted approach for threat detection and response.\nThe Cortex XDR agent monitors all network connections on an endpoint, collecting data on\ncommunicating IP addresses (B). This data is sent to the Cortex XDR platform for real-time\nanalysis against threat intelligence feeds and behavioral analytics engines to identify threats (C).\nWhen an endpoint communicates with a known malicious IP address, Cortex XDR generates an\nalert. Furthermore, through integration with enforcement points like Palo Alto Networks firewalls,\nCortex XDR can orchestrate a response to block traffic from these malicious IPs (A), preventing\nfurther communication.\n\n========================================================================================",
     "is_multiselect": true
@@ -1635,13 +1635,13 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "Which of the following best describes domain indicators in threat intelligence?",
     "options": {
-      "A": "Domains used by malicious actors for phishing and malware distribution",
-      "B": "Random websites visited by employees",
-      "C": "Email signatures of corporate users",
+      "A": "Email signatures of corporate users",
+      "B": "Domains used by malicious actors for phishing and malware distribution",
+      "C": "Random websites visited by employees",
       "D": "Database tables used in IT reports"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "In threat intelligence, domain indicators are domain names (e.g., malicious-site.com) that are\nknown to be associated with malicious activities. These domains are used by threat actors for\nvarious nefarious purposes, including hosting malware for distribution, operating\ncommand-and-control (C2) servers for botnets, and launching phishing campaigns to steal\ncredentials. Security solutions ingest lists of these malicious domains from threat intelligence\nfeeds to detect and block network traffic to or from them, thereby protecting the organization from\nassociated threats.\n\n========================================================================================",
     "is_multiselect": false
@@ -1652,14 +1652,14 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "Which two file-related signals can indicate potentially malicious activity? (Choose two)",
     "options": {
-      "A": "Unexpectedly frequent or unusual execution behavior",
-      "B": "A known-malicious file hash",
-      "C": "A file size greater than 100 MB by itself",
-      "D": "Storage in an uncompressed format"
+      "A": "A file size greater than 100 MB by itself",
+      "B": "Storage in an uncompressed format",
+      "C": "A known-malicious file hash",
+      "D": "Unexpectedly frequent or unusual execution behavior"
     },
     "answer": [
-      "A",
-      "B"
+      "C",
+      "D"
     ],
     "explanation": "A file's characteristics can provide strong clues about its potential for maliciousness. A known\nmalicious hash value is a definitive indicator, as it directly matches a signature of previously\nidentified malware. An unexpectedly high execution frequency is a powerful behavioral indicator.\nLegitimate processes typically have a predictable execution pattern; a sudden, high-frequency\nexecution can signify malicious activity like a script-based attack, process injection, or a worm\npropagating across a network. Security platforms like Cortex XDR monitor both static attributes\n(hashes) and behavioral analytics (execution frequency) to detect threats.\n\n========================================================================================",
     "is_multiselect": true
@@ -1670,13 +1670,13 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "How do security teams use IP reputation in threat analysis?",
     "options": {
-      "A": "By identifying suspicious or blacklisted IP addresses",
-      "B": "By allowing all traffic from known IPs",
+      "A": "By allowing all traffic from known IPs",
+      "B": "By monitoring IP addresses based on social media interactions",
       "C": "By classifying IPs based on internet speed",
-      "D": "By monitoring IP addresses based on social media interactions"
+      "D": "By identifying suspicious or blacklisted IP addresses"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "IP reputation is a critical component of threat intelligence used by security teams. It involves\ncorrelating IP addresses with malicious activities. Security platforms ingest IP reputation feeds\nthat classify IPs based on their known history, such as involvement in spam distribution, phishing\ncampaigns, botnet command-and-control (C2), or malware hosting. During threat analysis, an\nalert involving a low-reputation or blacklisted IP address is given higher priority, as it strongly\nindicates a connection to a malicious external entity. This context helps analysts quickly validate\nthreats and initiate response actions like blocking the IP.\n\n========================================================================================",
     "is_multiselect": false
@@ -1687,13 +1687,13 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "Which tool in Cortex helps manage and analyze threat indicators such as files, IPs, and domains?",
     "options": {
-      "A": "Cortex XSOAR",
+      "A": "Content Management System (CMS)",
       "B": "Email Marketing Software",
-      "C": "Enterprise Resource Planning (ERP)",
-      "D": "Content Management System (CMS)"
+      "C": "Cortex XSOAR",
+      "D": "Enterprise Resource Planning (ERP)"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Cortex XSOAR is the Palo Alto Networks platform for Security Orchestration, Automation, and\nResponse (SOAR), which includes a dedicated Threat Intelligence Management (TIM) module.\nThis module is specifically designed to aggregate, manage, and analyze threat indicators from\nvarious sources. Security teams use XSOAR to centralize indicators like malicious file hashes, IP\naddresses, and domains. The platform helps to deduplicate, enrich these indicators with context\nfrom other tools, score their severity, and automate response actions, such as sharing them with\nfirewalls or EDR tools for blocking.\n\n========================================================================================",
     "is_multiselect": false
@@ -1704,13 +1704,13 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "Which indicator type is most useful for detecting command-and-control (C2) traffic?",
     "options": {
-      "A": "Suspicious IP addresses and domains",
+      "A": "File extensions in email attachments",
       "B": "Usernames in system logs",
-      "C": "File extensions in email attachments",
-      "D": "Office locations of employees"
+      "C": "Office locations of employees",
+      "D": "Suspicious IP addresses and domains"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Command-and-control (C2) traffic is the communication between malware on a compromised\nhost and an external server controlled by an attacker. The most direct and useful indicators for\ndetecting this activity are the suspicious IP addresses and domain names of the C2 servers.\nSecurity tools like Cortex XDR monitor network connections and correlate them with threat\nintelligence feeds of known malicious IPs and domains to identify and block C2 channels.\n\n========================================================================================",
     "is_multiselect": false
@@ -1721,14 +1721,14 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "Which of the following are commonly used file analysis techniques in Cortex XDR? (Choose two)",
     "options": {
-      "A": "Static analysis of file hashes",
+      "A": "Comparing file size with average document size",
       "B": "Dynamic execution in a sandbox environment",
-      "C": "Reviewing file content in a word processor",
-      "D": "Comparing file size with average document size"
+      "C": "Static analysis of file hashes",
+      "D": "Reviewing file content in a word processor"
     },
     "answer": [
-      "A",
-      "B"
+      "B",
+      "C"
     ],
     "explanation": "Cortex XDR employs a multi-faceted approach to file analysis. Static analysis involves examining\nfile properties without executing the code, such as checking the file's hash (e.g., SHA256) against\na database of known malicious files in the WildFire threat intelligence cloud. Dynamic analysis\ninvolves executing the file in a secure, isolated sandbox environment (WildFire) to observe its\nbehavior, such as network connections, file system changes, and registry modifications, to\ndetermine if it is malicious.\n\n========================================================================================",
     "is_multiselect": true
@@ -1739,13 +1739,13 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "Which threat indicator is commonly used to detect phishing attacks?",
     "options": {
-      "A": "Malicious domains and URLs",
-      "B": "CPU usage of endpoint devices",
-      "C": "File size of downloaded documents",
-      "D": "Employee working hours"
+      "A": "CPU usage of endpoint devices",
+      "B": "Malicious domains and URLs",
+      "C": "Employee working hours",
+      "D": "File size of downloaded documents"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Phishing attacks are primarily delivered via malicious links embedded in emails or messages.\nThese links direct users to fraudulent websites hosted on malicious domains or URLs. Security\nsystems analyze and block traffic based on threat intelligence feeds containing known malicious\ndomains and URLs. This makes them the most direct and common indicator used to detect and\nprevent phishing attempts at the network and endpoint level.\n\n========================================================================================",
     "is_multiselect": false
@@ -1756,13 +1756,13 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "Which technique is commonly used to identify malicious file activity in Cortex XDR?",
     "options": {
-      "A": "Behavioral analysis of file execution patterns",
-      "B": "Checking file descriptions in a text editor",
-      "C": "Blocking all executable files without inspection",
-      "D": "Comparing file colors and icons"
+      "A": "Checking file descriptions in a text editor",
+      "B": "Behavioral analysis of file execution patterns",
+      "C": "Comparing file colors and icons",
+      "D": "Blocking all executable files without inspection"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Cortex XDR is an extended detection and response platform that excels at identifying threats by\nanalyzing behavior over time. It continuously monitors endpoint activities, such as process\ncreation, file system modifications, and network connections. By establishing a baseline of normal\nbehavior and applying machine learning and analytics, it detects anomalous or malicious\nexecution patterns that are indicative of malware, ransomware, or fileless attacks, even from\npreviously unknown threats.\n\n========================================================================================",
     "is_multiselect": false
@@ -1773,13 +1773,13 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "What role do IP indicators play in network security monitoring?",
     "options": {
-      "A": "Identifying and blocking communication with malicious IP addresses",
-      "B": "Assigning public IPs to internal devices",
-      "C": "Sorting internal network traffic by device type",
-      "D": "Increasing network speed for secure connections"
+      "A": "Sorting internal network traffic by device type",
+      "B": "Identifying and blocking communication with malicious IP addresses",
+      "C": "Increasing network speed for secure connections",
+      "D": "Assigning public IPs to internal devices"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "IP indicators are a fundamental part of threat intelligence. They consist of lists of IP addresses\nknown to be associated with malicious activities, such as command-and-control (C2) servers,\nmalware distribution points, or scanners. Network security devices, like Palo Alto Networks\nNext-Generation Firewalls, ingest these indicators (often via External Dynamic Lists). They then\nmonitor all network traffic, and if any communication to or from a listed malicious IP is detected,\nan alert is generated, and the connection can be automatically blocked according to policy.\n\n========================================================================================",
     "is_multiselect": false
@@ -1790,14 +1790,14 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "Which of the following are key indicators of domain-based threats? (Choose two)",
     "options": {
-      "A": "Newly registered or short-lived domains",
-      "B": "Domains with unusual character patterns",
+      "A": "Domains with unusual character patterns",
+      "B": "Employee workstation names",
       "C": "Email addresses in corporate directories",
-      "D": "Employee workstation names"
+      "D": "Newly registered or short-lived domains"
     },
     "answer": [
       "A",
-      "B"
+      "D"
     ],
     "explanation": "Threat actors frequently use newly registered domains (NRDs) for phishing and malware\ncampaigns because these domains have no prior reputation, allowing them to bypass many\nsecurity filters. These domains are often used for a very short period. Additionally, attackers\ncreate domains with unusual character patterns, using techniques like typosquatting (e.g.,\npa1oaltonetworks.com) or homoglyphs (using characters from different alphabets that look\nsimilar) to deceive users. Both of these characteristics are strong indicators of a domain's\npotential malicious intent.\n\n========================================================================================",
     "is_multiselect": true
@@ -1808,13 +1808,13 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "Which of the following techniques helps detect malicious domain activity in Cortex XDR?",
     "options": {
-      "A": "Monitoring DNS requests to detect unusual patterns",
-      "B": "Checking network speed and bandwidth usage",
-      "C": "Preventing employees from using social media",
-      "D": "Allowing only internal domains on corporate devices"
+      "A": "Allowing only internal domains on corporate devices",
+      "B": "Monitoring DNS requests to detect unusual patterns",
+      "C": "Checking network speed and bandwidth usage",
+      "D": "Preventing employees from using social media"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Cortex XDR employs analytics to detect malicious domain activity by monitoring and analyzing\nDNS requests. It establishes a baseline of normal DNS traffic and uses machine learning to\nidentify anomalies. This includes detecting connections to known malicious domains, identifying\npatterns indicative of Domain Generation Algorithms (DGA) used by malware for\ncommand-and-control (C2) communication, and flagging suspicious DNS tunneling activities. This\nbehavioral approach is crucial for uncovering covert C2 channels.\n\n========================================================================================",
     "is_multiselect": false
@@ -1825,13 +1825,13 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "How does Cortex XDR differentiate between legitimate and malicious file executions?",
     "options": {
-      "A": "By using behavioral analysis and machine learning models",
+      "A": "By scanning documents for specific fonts and formatting",
       "B": "By relying only on file extensions",
-      "C": "By blocking all newly downloaded files",
-      "D": "By scanning documents for specific fonts and formatting"
+      "C": "By using behavioral analysis and machine learning models",
+      "D": "By blocking all newly downloaded files"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Cortex XDR uses a multi-layered approach to differentiate between legitimate and malicious file\nexecutions, centered on behavioral analysis and machine learning. The Cortex XDR agent\nmonitors process behavior, system calls, file system modifications, and network connections in\nreal-time. These observations are fed into machine learning models trained to recognize tactics,\ntechniques, and procedures (TTPs) associated with malware and fileless attacks. This allows it to\ndetect malicious activity even from previously unknown threats, moving beyond simple\nsignature-based detection.\n\n========================================================================================",
     "is_multiselect": false
@@ -1842,13 +1842,13 @@
     "objective": "2.5 - File, IP address, domain, and URL indicators",
     "stem": "Which indicator type is most effective in detecting malware communicating with a remote server?",
     "options": {
-      "A": "Malicious IP addresses and domains",
-      "B": "File size of downloaded documents",
-      "C": "Employee login times",
+      "A": "Employee login times",
+      "B": "Malicious IP addresses and domains",
+      "C": "File size of downloaded documents",
       "D": "Device serial numbers"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Malicious IP addresses and domains are the most effective indicators for detecting malware\ncommunicating with a remote server. This type of communication is fundamental to\ncommand-and-control (C2) infrastructure, data exfiltration, and downloading additional malicious\npayloads. Security platforms like Cortex XDR ingest threat intelligence feeds containing lists of\nknown malicious IPs and domains. By monitoring network traffic (e.g., DNS queries, firewall logs)\nfor connections to these indicators, security teams can quickly identify compromised systems that\nare actively communicating with attacker infrastructure.\n\n========================================================================================",
     "is_multiselect": false
@@ -1859,13 +1859,13 @@
     "objective": "2.6 - WildFire, Unit 42 intelligence, and VirusTotal",
     "stem": "What is the primary security function of Advanced WildFire?",
     "options": {
-      "A": "Classifying files and links using static analysis, machine learning, dynamic analysis, and other advanced analysis engines",
+      "A": "Providing VPN authentication",
       "B": "Managing firewall rulebases across multiple networks",
       "C": "Encrypting sensitive files",
-      "D": "Providing VPN authentication"
+      "D": "Classifying files and links using static analysis, machine learning, dynamic analysis, and other advanced analysis engines"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Advanced WildFire classifies suspicious files and links by combining multiple analysis engines, including static analysis, machine learning, dynamic analysis in analysis environments, and other advanced techniques. Dynamic sandbox execution is important, but it is only one part of the service and should not be described as its complete function. After a malicious verdict, Palo Alto Networks can generate and distribute protections across subscribed enforcement points. Option A accurately captures this broader malware-analysis and prevention role.\n\n========================================================================================",
     "is_multiselect": false
@@ -1876,13 +1876,13 @@
     "objective": "2.6 - WildFire, Unit 42 intelligence, and VirusTotal",
     "stem": "Which of the following best describes Unit 42 intelligence?",
     "options": {
-      "A": "Palo Alto Networks' dedicated cybersecurity research team",
-      "B": "A network traffic optimization tool",
-      "C": "A log management service for cloud applications",
-      "D": "A web content filtering system"
+      "A": "A network traffic optimization tool",
+      "B": "A web content filtering system",
+      "C": "Palo Alto Networks' dedicated cybersecurity research team",
+      "D": "A log management service for cloud applications"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Unit 42 is the globally recognized threat intelligence and security consulting team at Palo Alto\nNetworks. It is composed of elite cybersecurity researchers and incident responders. Their\nmission is to research and analyze emerging threats, malware campaigns, and adversary tactics,\ntechniques, and procedures (TTPs). The intelligence they gather is integrated into Palo Alto\nNetworks products and shared with customers and the broader security community through\npublications and threat briefings to provide actionable insights and context on the threat\nlandscape.\n\n========================================================================================",
     "is_multiselect": false
@@ -1893,13 +1893,13 @@
     "objective": "2.6 - WildFire, Unit 42 intelligence, and VirusTotal",
     "stem": "Which of the following is a benefit of using VirusTotal in threat analysis?",
     "options": {
-      "A": "Aggregates malware detection results from multiple security vendors",
+      "A": "Acts as a firewall to block malicious network traffic",
       "B": "Replaces all endpoint security solutions",
-      "C": "Prevents malware execution at the operating system level",
-      "D": "Acts as a firewall to block malicious network traffic"
+      "C": "Aggregates malware detection results from multiple security vendors",
+      "D": "Prevents malware execution at the operating system level"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "The principal benefit of VirusTotal is its role as a threat intelligence aggregator. It allows an\nanalyst to submit a suspicious file, hash, or URL and receive detection results from a large and\ndiverse set of over 70 security vendors and scanning engines. This provides a broad consensus\non whether an artifact is known-malicious within the global security community. It helps in quickly\nidentifying known threats, understanding how widely they are detected, and reducing the impact\nof false positives or negatives from a single security tool.\n\n========================================================================================",
     "is_multiselect": false
@@ -1911,13 +1911,13 @@
     "stem": "Which two Advanced WildFire capabilities improve malware detection and prevention? (Choose two)",
     "options": {
       "A": "Behavioral and dynamic analysis of suspicious samples",
-      "B": "Rapid generation and distribution of protections and WildFire signatures",
+      "B": "Deleting security logs",
       "C": "Blocking all external traffic by default",
-      "D": "Deleting security logs"
+      "D": "Rapid generation and distribution of protections and WildFire signatures"
     },
     "answer": [
       "A",
-      "B"
+      "D"
     ],
     "explanation": "WildFire is a cloud-based threat analysis service that provides real-time malware detection\nthrough two primary mechanisms. First, it uses behavioral analysis by executing unknown files in\na secure, virtual sandbox environment to observe their actions for malicious intent. Second, upon\nidentifying a new malicious file, WildFire automatically generates and distributes hash-based\nmalware signatures to all subscribed Palo Alto Networks security platforms globally. This enables\nnear real-time protection against newly discovered, zero-day threats across the entire ecosystem.\n\n========================================================================================",
     "is_multiselect": true
@@ -1928,13 +1928,13 @@
     "objective": "2.6 - WildFire, Unit 42 intelligence, and VirusTotal",
     "stem": "How does Unit 42 contribute to threat intelligence?",
     "options": {
-      "A": "By analyzing cyber threats and providing intelligence reports",
-      "B": "By optimizing web browsing speed",
+      "A": "By optimizing web browsing speed",
+      "B": "By analyzing cyber threats and providing intelligence reports",
       "C": "By automating firewall configurations",
       "D": "By blocking all external network traffic"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Unit 42 is the global threat intelligence and security consulting team for Palo Alto Networks. Its\nprimary function is to research, analyze, and track emerging cyber threats, threat actors, and their\ntactics, techniques, and procedures (TTPs). The team publishes its findings in the form of detailed\nintelligence reports, blogs, and playbooks. This research provides actionable threat intelligence\nthat informs Palo Alto Networks products and helps customers and the broader security\ncommunity understand and defend against sophisticated cyberattacks.\n\n========================================================================================",
     "is_multiselect": false
@@ -1945,13 +1945,13 @@
     "objective": "2.7 - False positive, false negative, and true positive cases",
     "stem": "Which of the following best defines a false positive in security monitoring?",
     "options": {
-      "A": "A legitimate activity incorrectly flagged as a threat",
-      "B": "A missed security incident that was actually an attack",
-      "C": "A correct identification of a security breach",
-      "D": "An incident that requires manual analysis"
+      "A": "A missed security incident that was actually an attack",
+      "B": "A correct identification of a security breach",
+      "C": "An incident that requires manual analysis",
+      "D": "A legitimate activity incorrectly flagged as a threat"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "A false positive, also known as a Type I error, is a standard term in security monitoring and\nintrusion detection. It occurs when a security system incorrectly identifies a benign or legitimate\nactivity as malicious or threatening. For example, an intrusion detection system might flag normal\nadministrative network traffic as an attack. These erroneous alerts can lead to alert fatigue among\nsecurity analysts, causing them to waste time investigating non-issues and potentially overlook\ngenuine threats (true positives).\n\n========================================================================================",
     "is_multiselect": false
@@ -1962,13 +1962,13 @@
     "objective": "2.7 - False positive, false negative, and true positive cases",
     "stem": "What is an example of a false negative in security detection?",
     "options": {
-      "A": "A malware infection that goes undetected by security tools",
-      "B": "A firewall blocking an attacker's IP successfully",
-      "C": "A phishing email flagged as spam correctly",
-      "D": "A security patch successfully applied"
+      "A": "A phishing email flagged as spam correctly",
+      "B": "A security patch successfully applied",
+      "C": "A firewall blocking an attacker's IP successfully",
+      "D": "A malware infection that goes undetected by security tools"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "A false negative, or Type II error, represents a failure of a security detection system. It occurs\nwhen a genuine security threat or malicious activity is not detected by the security tools in place.\nA prime example is a new strain of malware infecting a host because the endpoint security\nsoftware failed to recognize its signature or malicious behavior. False negatives are particularly\ndangerous because they create a false sense of security, allowing an attacker to operate within a\nnetwork undetected.\n\n========================================================================================",
     "is_multiselect": false
@@ -1979,13 +1979,13 @@
     "objective": "2.7 - False positive, false negative, and true positive cases",
     "stem": "Which of the following represents a true positive in threat detection?",
     "options": {
-      "A": "An actual attack correctly identified by security tools",
-      "B": "A firewall blocking all traffic regardless of source",
-      "C": "An authorized user accessing their own account",
+      "A": "A firewall blocking all traffic regardless of source",
+      "B": "An authorized user accessing their own account",
+      "C": "An actual attack correctly identified by security tools",
       "D": "A security alert ignored by analysts"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "A true positive is the ideal outcome for a security detection system. It occurs when the system\ncorrectly identifies a malicious event, such as an intrusion attempt, malware execution, or policy\nviolation, and generates an accurate alert. This successful detection allows the security\noperations team to initiate an appropriate and timely incident response, effectively neutralizing the\nthreat before it can cause significant harm. A high rate of true positives indicates that the security\ntools are well-calibrated and effective at recognizing genuine threats within the environment.\n\n========================================================================================",
     "is_multiselect": false
@@ -1996,14 +1996,14 @@
     "objective": "2.7 - False positive, false negative, and true positive cases",
     "stem": "Which of the following can help reduce false positives in security monitoring? (Choose two)",
     "options": {
-      "A": "Fine-tuning detection rules based on real-world attack patterns",
-      "B": "Using threat intelligence feeds to validate alerts",
-      "C": "Ignoring all low-priority alerts",
-      "D": "Removing security controls to avoid unnecessary alerts"
+      "A": "Removing security controls to avoid unnecessary alerts",
+      "B": "Fine-tuning detection rules based on real-world attack patterns",
+      "C": "Using threat intelligence feeds to validate alerts",
+      "D": "Ignoring all low-priority alerts"
     },
     "answer": [
-      "A",
-      "B"
+      "B",
+      "C"
     ],
     "explanation": "Reducing false positives involves increasing the precision of detection logic. Fine-tuning detection\nrules (A) is a core practice where analysts adjust rule parameters to better match the specific\nenvironment and known malicious patterns, thereby ignoring benign activity that might otherwise\ntrigger a generic rule. Using threat intelligence feeds (B) adds crucial context to an alert. By\ncorrelating an event with high-fidelity intelligence (e.g., known malicious IPs, hashes), an analyst\ncan validate whether the activity is part of a known threat campaign, helping to quickly dismiss\nalerts that lack such corroboration and are likely false positives.\n\n========================================================================================",
     "is_multiselect": true
@@ -2014,13 +2014,13 @@
     "objective": "2.7 - False positive, false negative, and true positive cases",
     "stem": "Which approach can help minimize false negatives in threat detection?",
     "options": {
-      "A": "Implementing machine learning-based anomaly detection",
-      "B": "Blocking all internet access for employees",
-      "C": "Automatically deleting all logs after 24 hours",
-      "D": "Allowing all traffic without inspection"
+      "A": "Blocking all internet access for employees",
+      "B": "Allowing all traffic without inspection",
+      "C": "Implementing machine learning-based anomaly detection",
+      "D": "Automatically deleting all logs after 24 hours"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Minimizing false negatives requires improving detection coverage, especially for novel and\nevasive threats. Machine learning-based anomaly detection (A) is a powerful approach for this. It\nestablishes a baseline of normal activity for users and endpoints and then flags significant\ndeviations as suspicious. This behavioral approach can identify zero-day exploits, insider threats,\nand advanced persistent threats (APTs) that do not match pre-defined signatures, which\ntraditional systems would miss. By focusing on anomalous behavior rather than known bad\nsignatures, these systems effectively reduce the rate of false negatives.\n\n========================================================================================",
     "is_multiselect": false
@@ -2031,13 +2031,13 @@
     "objective": "2.7 - False positive, false negative, and true positive cases",
     "stem": "How does WildFire improve the accuracy of malware detection?",
     "options": {
-      "A": "By performing behavioral analysis in a sandbox",
-      "B": "By comparing files against multiple antivirus databases",
-      "C": "By analyzing only file extensions",
-      "D": "By preventing users from downloading any files"
+      "A": "By preventing users from downloading any files",
+      "B": "By analyzing only file extensions",
+      "C": "By comparing files against multiple antivirus databases",
+      "D": "By performing behavioral analysis in a sandbox"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "WildFire improves malware detection accuracy by executing unknown files and links in a\ncustom-built, cloud-based virtual sandbox environment. It observes the sample's behavior for\nhundreds of malicious characteristics to determine if it is malware. This dynamic, behavioral\nanalysis allows WildFire to identify previously unseen, zero-day threats that signature-based\nmethods would miss. The service then automatically generates and distributes protections to\nsubscribed devices globally, effectively immunizing them against the newly discovered threat.\n\n========================================================================================",
     "is_multiselect": false
@@ -2048,13 +2048,13 @@
     "objective": "2.7 - False positive, false negative, and true positive cases",
     "stem": "Which of the following helps validate whether an alert is a true positive?",
     "options": {
-      "A": "Correlating alerts with external threat intelligence sources",
-      "B": "Automatically dismissing alerts below a certain priority level",
-      "C": "Deleting logs after analyzing the first alert",
-      "D": "Allowing only security administrators to review incidents"
+      "A": "Allowing only security administrators to review incidents",
+      "B": "Deleting logs after analyzing the first alert",
+      "C": "Correlating alerts with external threat intelligence sources",
+      "D": "Automatically dismissing alerts below a certain priority level"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Validating whether an alert is a true positive requires gathering additional context and\ncorroborating evidence. Correlating the indicators of compromise (IOCs) from an alert, such as IP\naddresses, domains, or file hashes, with external threat intelligence sources is a highly effective\nmethod. If a reputable threat intelligence feed confirms that an indicator is associated with a\nknown malicious campaign or actor, it significantly increases the confidence that the alert\nrepresents a genuine threat (a true positive) and warrants further investigation and response.\n\n========================================================================================",
     "is_multiselect": false
@@ -2065,13 +2065,13 @@
     "objective": "2.7 - False positive, false negative, and true positive cases",
     "stem": "Which of the following best describes a low-confidence security alert?",
     "options": {
-      "A": "An alert generated with insufficient context or supporting evidence",
-      "B": "A confirmed cyberattack targeting critical infrastructure",
-      "C": "A validated alert indicating a successful breach",
-      "D": "A firewall policy update notification"
+      "A": "A validated alert indicating a successful breach",
+      "B": "An alert generated with insufficient context or supporting evidence",
+      "C": "A firewall policy update notification",
+      "D": "A confirmed cyberattack targeting critical infrastructure"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "A low-confidence security alert is one that is generated based on data that is suspicious but lacks\nsufficient corroborating evidence or context to definitively classify it as malicious. These alerts\noften stem from a single, uncorroborated data point or an event that deviates only slightly from a\nbaseline. While they require investigation, they have a higher probability of being a false positive\ncompared to high-confidence alerts, which are typically supported by multiple indicators, strong\nsignatures, or clear evidence of malicious behavior.\n\n========================================================================================",
     "is_multiselect": false
@@ -2083,9 +2083,9 @@
     "stem": "Which security approach helps in reducing false negatives?",
     "options": {
       "A": "Using machine learning and behavioral analytics to detect anomalies",
-      "B": "Ignoring alerts with no immediate impact",
+      "B": "Manually reviewing every log entry in the SIEM",
       "C": "Blocking all incoming emails as a preventive measure",
-      "D": "Manually reviewing every log entry in the SIEM"
+      "D": "Ignoring alerts with no immediate impact"
     },
     "answer": [
       "A"
@@ -2099,13 +2099,13 @@
     "objective": "2.7 - False positive, false negative, and true positive cases",
     "stem": "What is the primary risk associated with false negatives in security operations?",
     "options": {
-      "A": "A successful attack remains undetected and causes damage",
-      "B": "Increased firewall logging requirements",
+      "A": "Increased firewall logging requirements",
+      "B": "A successful attack remains undetected and causes damage",
       "C": "Too many alerts overwhelming security teams",
       "D": "Increased storage costs for logs"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "The primary and most severe risk of a false negative is that a genuine security threat goes\ncompletely undetected. This allows an attacker to establish a foothold, move laterally, exfiltrate\ndata, or deploy ransomware without triggering any alarms. The resulting damage from this\nundetected breach can be catastrophic, including financial loss, data theft, reputational harm, and\noperational disruption. A false negative represents a complete failure of a security control at a\ncritical moment, making it the most significant risk category in security operations.\n\n========================================================================================",
     "is_multiselect": false
@@ -2116,13 +2116,13 @@
     "objective": "2.7 - False positive, false negative, and true positive cases",
     "stem": "Which integrated combination provides strong evidence for validating genuine security detections?",
     "options": {
-      "A": "SIEM, EDR/XDR, and threat-intelligence platforms",
-      "B": "Word-processing and spreadsheet software",
-      "C": "Social-media advertising analytics",
-      "D": "HR reporting tools alone"
+      "A": "Word-processing and spreadsheet software",
+      "B": "HR reporting tools alone",
+      "C": "SIEM, EDR/XDR, and threat-intelligence platforms",
+      "D": "Social-media advertising analytics"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "A true positive is the correct identification of a genuine threat. The best strategy for accurately\ndetecting true positives involves correlating data from multiple sources to build a high-fidelity\npicture of events. A Security Information and Event Management (SIEM) system aggregates logs,\nan Endpoint Detection and Response (EDR) tool provides deep visibility into endpoint activity, and\na threat intelligence platform enriches this data with external context on known threats and\nattacker tactics. This integrated approach, central to platforms like Palo Alto Networks XSIAM,\nallows analysts to connect disparate events, validate threats, and minimize false alarms.\n\n========================================================================================",
     "is_multiselect": false
@@ -2133,13 +2133,13 @@
     "objective": "2.8 - Basic threat hunting",
     "stem": "What is the primary goal of threat hunting in cybersecurity?",
     "options": {
-      "A": "Proactively searching for hidden threats before they cause damage",
+      "A": "Blocking all network traffic as a preventive measure",
       "B": "Waiting for SIEM alerts before investigating incidents",
-      "C": "Blocking all network traffic as a preventive measure",
+      "C": "Proactively searching for hidden threats before they cause damage",
       "D": "Relying solely on automated security tools for detection"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Threat hunting is an active, analyst-driven cybersecurity practice. Its fundamental goal is to\nproactively and iteratively search through networks and endpoints to detect and isolate advanced\nthreats that evade existing automated security solutions. This approach assumes that adversaries\nmay have already bypassed preventive controls, shifting the focus from reactive incident\nresponse to proactive discovery before significant damage or data exfiltration occurs.\n\n========================================================================================",
     "is_multiselect": false
@@ -2150,14 +2150,14 @@
     "objective": "2.8 - Basic threat hunting",
     "stem": "Which of the following are key components of a threat hunting process? (Choose two)",
     "options": {
-      "A": "Hypothesis-driven investigations",
-      "B": "Analyzing indicators of compromise (IOCs)",
-      "C": "Blocking all internet traffic",
-      "D": "Only using signature-based detections"
+      "A": "Blocking all internet traffic",
+      "B": "Only using signature-based detections",
+      "C": "Hypothesis-driven investigations",
+      "D": "Analyzing indicators of compromise (IOCs)"
     },
     "answer": [
-      "A",
-      "B"
+      "C",
+      "D"
     ],
     "explanation": "A successful threat hunting process is structured and methodical. It often begins with a\nhypothesis, which is a testable assumption about a potential threat actor's TTPs (e.g., \"An\nattacker is using WMI for lateral movement\"). Hunters then search for evidence to validate or\nrefute this hypothesis. The process also heavily involves analyzing various data sources for\nindicators of compromise (IOCs), such as malicious file hashes or IP addresses, and indicators of\nattack (IOAs), which are sequences of suspicious actions, to uncover adversary activity.\n\n========================================================================================",
     "is_multiselect": true
@@ -2168,13 +2168,13 @@
     "objective": "2.8 - Basic threat hunting",
     "stem": "Which tool is commonly used for threat hunting in Palo Alto Networks security solutions?",
     "options": {
-      "A": "Cortex XDR",
-      "B": "Microsoft Word",
-      "C": "Human Resources Management System (HRMS)",
-      "D": "Social Media Analytics"
+      "A": "Social Media Analytics",
+      "B": "Cortex XDR",
+      "C": "Microsoft Word",
+      "D": "Human Resources Management System (HRMS)"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Cortex XDR is Palo Alto Networks' extended detection and response platform, specifically\ndesigned to provide the visibility and analytical capabilities required for effective threat hunting. It\nconsolidates and correlates vast amounts of endpoint, network, and cloud data into a unified data\nlake. Security analysts can then use the powerful XDR Query Language (XQL) to run complex\nqueries, search for indicators, and proactively hunt for hidden threats across the entire IT\nenvironment.\n\n========================================================================================",
     "is_multiselect": false
@@ -2185,14 +2185,14 @@
     "objective": "2.8 - Basic threat hunting",
     "stem": "Which two indicators can be useful when hunting for malicious endpoint activity? (Choose two)",
     "options": {
-      "A": "Suspicious outbound connections to rare domains",
-      "B": "Unexpected privilege-escalation events",
-      "C": "The ordinary number of emails sent by a user",
-      "D": "Employees' unrelated social-media activity"
+      "A": "Employees' unrelated social-media activity",
+      "B": "The ordinary number of emails sent by a user",
+      "C": "Suspicious outbound connections to rare domains",
+      "D": "Unexpected privilege-escalation events"
     },
     "answer": [
-      "A",
-      "B"
+      "C",
+      "D"
     ],
     "explanation": "Effective threat hunting for malware relies on identifying anomalous behaviors that deviate from\nnormal activity. Suspicious outbound connections to rare or newly registered domains are a strong\nindicator of command-and-control (C2) communication or data exfiltration by malware. Similarly,\nunexpected privilege escalation events (e.g., a standard user process suddenly running with\nsystem-level privileges) are a classic Indicator of Attack (IOA) suggesting a system has been\ncompromised and an attacker is attempting to gain deeper control.\n\n========================================================================================",
     "is_multiselect": true
@@ -2204,8 +2204,8 @@
     "stem": "Which of the following methods helps detect insider threats during threat hunting?",
     "options": {
       "A": "Monitoring abnormal access to sensitive files",
-      "B": "Tracking external social media posts of employees",
-      "C": "Checking the number of meetings attended by employees",
+      "B": "Checking the number of meetings attended by employees",
+      "C": "Tracking external social media posts of employees",
       "D": "Reviewing company financial reports"
     },
     "answer": [
@@ -2220,13 +2220,13 @@
     "objective": "2.8 - Basic threat hunting",
     "stem": "Which hunting technique helps detect stealthy malware or fileless attacks?",
     "options": {
-      "A": "Monitoring process execution and memory usage anomalies",
-      "B": "Filtering all emails without investigation",
-      "C": "Manually reviewing every system file",
-      "D": "Relying only on firewall logs"
+      "A": "Relying only on firewall logs",
+      "B": "Manually reviewing every system file",
+      "C": "Filtering all emails without investigation",
+      "D": "Monitoring process execution and memory usage anomalies"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Fileless attacks operate in memory and avoid writing malicious executables to the disk, thereby\nevading traditional signature-based antivirus solutions. The most effective hunting technique is to\nfocus on behavioral anomalies. This includes monitoring for legitimate processes (e.g.,\nPowerShell.exe, WScript.exe) that exhibit suspicious behavior, such as executing obfuscated\nscripts, making unusual network connections, or injecting code into other processes. Analyzing\nmemory usage and process execution chains for these deviations is crucial for uncovering such\nstealthy threats.\n\n========================================================================================",
     "is_multiselect": false
@@ -2254,13 +2254,13 @@
     "objective": "2.8 - Basic threat hunting",
     "stem": "What is an important consideration when performing threat hunting on endpoint devices?",
     "options": {
-      "A": "Reviewing process creation, registry changes, and command execution history",
+      "A": "Blocking all new applications automatically",
       "B": "Only investigating alerts flagged as high severity",
-      "C": "Blocking all new applications automatically",
-      "D": "Analyzing user feedback on system performance"
+      "C": "Analyzing user feedback on system performance",
+      "D": "Reviewing process creation, registry changes, and command execution history"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Effective endpoint threat hunting requires deep visibility into system activities. Proactive hunting\ngoes beyond signature-based alerts to find novel or hidden threats. This involves analyzing\nlow-level telemetry such as process creation events, command-line arguments, registry\nmodifications, and network connections. By correlating these events, a hunter can identify\nsuspicious patterns of behavior, such as a legitimate process spawning an unusual child process\nor a script making unauthorized registry changes for persistence. This granular analysis is\nfundamental to uncovering advanced threats that evade traditional defenses.\n\n========================================================================================",
     "is_multiselect": false
@@ -2272,9 +2272,9 @@
     "stem": "Why is baselining normal network behavior important in threat hunting?",
     "options": {
       "A": "It helps identify deviations that may indicate malicious activity",
-      "B": "It automatically prevents all security incidents",
+      "B": "It allows employees to bypass security restrictions",
       "C": "It eliminates the need for SIEM and EDR solutions",
-      "D": "It allows employees to bypass security restrictions"
+      "D": "It automatically prevents all security incidents"
     },
     "answer": [
       "A"
@@ -2288,13 +2288,13 @@
     "objective": "3.1.1 - Sensors",
     "stem": "Which Cortex XDR component supplies endpoint telemetry such as process execution and network activity?",
     "options": {
-      "A": "Cortex XDR agent",
+      "A": "Threat Intelligence Management feed",
       "B": "Cortex XSOAR job",
-      "C": "Threat Intelligence Management feed",
-      "D": "Marketplace content pack"
+      "C": "Marketplace content pack",
+      "D": "Cortex XDR agent"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "The Cortex XDR agent is an endpoint sensor that provides protection and detailed endpoint telemetry. Jobs and Marketplace content packs belong to automation/content workflows, while a threat-intelligence feed supplies indicators rather than endpoint activity.\n\n========================================================================================",
     "is_multiselect": false
@@ -2307,8 +2307,8 @@
     "options": {
       "A": "It combines related events from different sources into a coherent activity context",
       "B": "It deletes duplicate endpoint agents",
-      "C": "It converts every alert into a firewall rule",
-      "D": "It replaces the need for data ingestion"
+      "C": "It replaces the need for data ingestion",
+      "D": "It converts every alert into a firewall rule"
     },
     "answer": [
       "A"
@@ -2322,13 +2322,13 @@
     "objective": "3.1.3 - Causality View",
     "stem": "An analyst needs to understand the parent process, child processes, and related activity behind an alert. Which Cortex XDR view is most appropriate?",
     "options": {
-      "A": "Causality View",
-      "B": "Agent installation package",
+      "A": "Agent installation package",
+      "B": "Causality View",
       "C": "Data-retention settings",
       "D": "Marketplace"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Causality View presents the chain of related events and processes associated with an alert, helping the analyst trace root cause and attack progression.\n\n========================================================================================",
     "is_multiselect": false
@@ -2339,13 +2339,13 @@
     "objective": "3.1.4 - WildFire",
     "stem": "What does Advanced WildFire contribute to a Cortex XDR investigation?",
     "options": {
-      "A": "Malware analysis and verdict context for suspicious files",
-      "B": "Employee payroll records",
+      "A": "Employee payroll records",
+      "B": "Malware analysis and verdict context for suspicious files",
       "C": "Physical badge-access enforcement",
       "D": "Replacement of all endpoint telemetry"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Advanced WildFire analyzes suspicious files and produces verdicts and threat intelligence that can support detection and investigation. It is not an identity, physical-access, or telemetry-replacement system.\n\n========================================================================================",
     "is_multiselect": false
@@ -2356,13 +2356,13 @@
     "objective": "3.1.5 - Detection and response",
     "stem": "Which action is an example of endpoint response in Cortex XDR?",
     "options": {
-      "A": "Isolating a compromised endpoint from the network",
+      "A": "Creating a Pearson exam appointment",
       "B": "Increasing the data-retention license",
-      "C": "Publishing a Marketplace content pack",
-      "D": "Creating a Pearson exam appointment"
+      "C": "Isolating a compromised endpoint from the network",
+      "D": "Publishing a Marketplace content pack"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Endpoint isolation is a response action used to contain a compromised host while preserving management communication needed for investigation and remediation.\n\n========================================================================================",
     "is_multiselect": false
@@ -2373,13 +2373,13 @@
     "objective": "3.1.6 - Behavioral analytics",
     "stem": "Why can behavioral analytics detect activity that has no known malicious hash?",
     "options": {
-      "A": "It identifies deviations and suspicious behavior patterns rather than relying only on known signatures",
-      "B": "It treats every uncommon event as confirmed malware",
+      "A": "It treats every uncommon event as confirmed malware",
+      "B": "It examines only file names",
       "C": "It disables correlation to reduce noise",
-      "D": "It examines only file names"
+      "D": "It identifies deviations and suspicious behavior patterns rather than relying only on known signatures"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Behavioral analytics evaluates activity patterns and deviations from expected behavior, enabling detection of suspicious behavior even when a known signature or hash is unavailable.\n\n========================================================================================",
     "is_multiselect": false
@@ -2390,13 +2390,13 @@
     "objective": "3.1.7 - Data sources, users, artifacts, and assets",
     "stem": "During an investigation, why should an analyst review users, endpoints, IP addresses, and file artifacts together?",
     "options": {
-      "A": "Correlating those entities helps establish scope and relationships across the incident",
-      "B": "Each entity must always be investigated as an unrelated event",
-      "C": "Only the user name can determine whether malware executed",
-      "D": "Asset context is relevant only to licensing"
+      "A": "Asset context is relevant only to licensing",
+      "B": "Correlating those entities helps establish scope and relationships across the incident",
+      "C": "Each entity must always be investigated as an unrelated event",
+      "D": "Only the user name can determine whether malware executed"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Investigation context is built by correlating users, assets, network indicators, and artifacts. Together they reveal affected entities, causal relationships, and incident scope.\n\n========================================================================================",
     "is_multiselect": false
@@ -2409,8 +2409,8 @@
     "options": {
       "A": "An installation package appropriate for the target platform and deployment requirements",
       "B": "A VirusTotal account for every endpoint user",
-      "C": "A separate SIEM for every agent",
-      "D": "A WildFire appliance on each endpoint"
+      "C": "A WildFire appliance on each endpoint",
+      "D": "A separate SIEM for every agent"
     },
     "answer": [
       "A"
@@ -2424,13 +2424,13 @@
     "objective": "3.2 - Agent management and deployment",
     "stem": "Why are agent installation packages and endpoint policies separate concepts?",
     "options": {
-      "A": "The package installs and registers the agent, while policy controls protection and behavior after deployment",
+      "A": "Installation packages are threat-intelligence feeds",
       "B": "The package performs incident scoring, while policy schedules certification exams",
       "C": "Policies can be used only before an agent is installed",
-      "D": "Installation packages are threat-intelligence feeds"
+      "D": "The package installs and registers the agent, while policy controls protection and behavior after deployment"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "The installation package is used to deploy/register the endpoint agent. Endpoint policies and profiles govern the agent's protection settings and behavior after deployment.\n\n========================================================================================",
     "is_multiselect": false
@@ -2443,8 +2443,8 @@
     "options": {
       "A": "When an organization needs to correlate endpoint activity with network, identity, cloud, and other data sources",
       "B": "When an organization wants to eliminate all endpoint sensors",
-      "C": "When the only requirement is payroll processing",
-      "D": "When security data must remain permanently uncorrelated"
+      "C": "When security data must remain permanently uncorrelated",
+      "D": "When the only requirement is payroll processing"
     },
     "answer": [
       "A"
@@ -2459,9 +2459,9 @@
     "stem": "What is the relationship between alerts and incidents in Cortex XDR?",
     "options": {
       "A": "Related alerts can be grouped into an incident to provide a unified investigation context",
-      "B": "Every incident must contain exactly one alert",
-      "C": "Alerts are agent installation files",
-      "D": "Incidents are used only for report scheduling"
+      "B": "Incidents are used only for report scheduling",
+      "C": "Every incident must contain exactly one alert",
+      "D": "Alerts are agent installation files"
     },
     "answer": [
       "A"
@@ -2475,13 +2475,13 @@
     "objective": "3.1.7 - Data sources, users, artifacts, and assets",
     "stem": "Which evidence most directly helps determine whether a suspicious process is part of a larger attack chain?",
     "options": {
-      "A": "Its causality relationships, command line, user, endpoint, and associated network activity",
-      "B": "The endpoint user's office furniture inventory",
-      "C": "The file name alone, without context",
-      "D": "The number of dashboard widgets"
+      "A": "The file name alone, without context",
+      "B": "The number of dashboard widgets",
+      "C": "Its causality relationships, command line, user, endpoint, and associated network activity",
+      "D": "The endpoint user's office furniture inventory"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Process causality, execution details, user and endpoint context, and related network activity provide the evidence needed to assess the process within an attack chain.\n\n========================================================================================",
     "is_multiselect": false
@@ -2492,13 +2492,13 @@
     "objective": "4.1.1 - Marketplace",
     "stem": "What is the primary purpose of Cortex Marketplace content packs?",
     "options": {
-      "A": "To provide packaged integrations, playbooks, scripts, and related content for security use cases",
-      "B": "To store endpoint disk images",
+      "A": "To store endpoint disk images",
+      "B": "To provide packaged integrations, playbooks, scripts, and related content for security use cases",
       "C": "To replace all third-party products",
       "D": "To define the certification passing score"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Marketplace content packs deliver supported building blocks such as integrations, playbooks, scripts, incident fields, and other content that extend XSOAR use cases.\n\n========================================================================================",
     "is_multiselect": false
@@ -2509,13 +2509,13 @@
     "objective": "4.1.2 - Playbooks",
     "stem": "What is a Cortex XSOAR playbook?",
     "options": {
-      "A": "A structured workflow of tasks that can automate and guide investigation and response",
-      "B": "A static list of endpoint serial numbers",
-      "C": "A replacement for every analyst decision",
-      "D": "A storage-retention license"
+      "A": "A storage-retention license",
+      "B": "A structured workflow of tasks that can automate and guide investigation and response",
+      "C": "A static list of endpoint serial numbers",
+      "D": "A replacement for every analyst decision"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "A playbook is a sequence of automated and manual tasks arranged in a defined flow to standardize and accelerate investigation and response.\n\n========================================================================================",
     "is_multiselect": false
@@ -2526,13 +2526,13 @@
     "objective": "4.1.3 - Third-party system integration",
     "stem": "What does an integration instance represent in Cortex XSOAR?",
     "options": {
-      "A": "A configured connection to a specific external product or service",
-      "B": "A duplicate of every incident",
-      "C": "A certification exam session",
-      "D": "A type of endpoint operating system"
+      "A": "A type of endpoint operating system",
+      "B": "A configured connection to a specific external product or service",
+      "C": "A duplicate of every incident",
+      "D": "A certification exam session"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "An integration supplies commands and capabilities for a product, while an integration instance contains the configuration and credentials needed to connect to a particular service deployment.\n\n========================================================================================",
     "is_multiselect": false
@@ -2561,8 +2561,8 @@
     "stem": "What information is recorded in the Cortex XSOAR War Room?",
     "options": {
       "A": "Investigation commands, task output, analyst notes, and evidence associated with the incident",
-      "B": "Only the organization's marketing calendar",
-      "C": "Agent installation binaries",
+      "B": "Agent installation binaries",
+      "C": "Only the organization's marketing calendar",
       "D": "Unrelated certification results"
     },
     "answer": [
@@ -2578,9 +2578,9 @@
     "stem": "Why are incident fields and context data useful during a Cortex XSOAR investigation?",
     "options": {
       "A": "They structure case information and allow playbook tasks to use outputs from earlier steps",
-      "B": "They prevent any integration from running",
+      "B": "They are used only to calculate license cost",
       "C": "They remove the need to track evidence",
-      "D": "They are used only to calculate license cost"
+      "D": "They prevent any integration from running"
     },
     "answer": [
       "A"
@@ -2594,13 +2594,13 @@
     "objective": "4.2 - Scripts and jobs",
     "stem": "How does a Cortex XSOAR job differ from a script?",
     "options": {
-      "A": "A job runs a playbook on a schedule or event, while a script performs a reusable command or logic function",
-      "B": "A job is an endpoint agent, while a script is a firewall",
+      "A": "Jobs cannot invoke playbooks",
+      "B": "A job runs a playbook on a schedule or event, while a script performs a reusable command or logic function",
       "C": "Scripts can run only outside XSOAR",
-      "D": "Jobs cannot invoke playbooks"
+      "D": "A job is an endpoint agent, while a script is a firewall"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Jobs execute playbooks based on time or feed events. Scripts are reusable units of logic or commands that can be called by analysts, integrations, or playbook tasks.\n\n========================================================================================",
     "is_multiselect": false
@@ -2613,8 +2613,8 @@
     "options": {
       "A": "When analyst judgment or approval is required before the workflow proceeds",
       "B": "Whenever the playbook must ignore all context data",
-      "C": "To convert the playbook into an endpoint agent",
-      "D": "Only when no incident exists"
+      "C": "Only when no incident exists",
+      "D": "To convert the playbook into an endpoint agent"
     },
     "answer": [
       "A"
@@ -2628,13 +2628,13 @@
     "objective": "5.1.1 - Sensors",
     "stem": "Why does Cortex XSIAM use data from multiple sensors and sources?",
     "options": {
-      "A": "To correlate activity across the environment and provide broader detection and investigation context",
+      "A": "To replace all data ingestion with manual notes",
       "B": "To ensure every event remains isolated",
-      "C": "To replace all data ingestion with manual notes",
-      "D": "To limit investigations to endpoint file names"
+      "C": "To limit investigations to endpoint file names",
+      "D": "To correlate activity across the environment and provide broader detection and investigation context"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "XSIAM combines endpoint, network, identity, cloud, and other security data so detections and investigations can use cross-source context.\n\n========================================================================================",
     "is_multiselect": false
@@ -2645,13 +2645,13 @@
     "objective": "5.1.2 - Log stitching",
     "stem": "What does log stitching enable in Cortex XSIAM?",
     "options": {
-      "A": "Association of related records and entities across ingested data",
-      "B": "Automatic deletion of every repeated value",
-      "C": "Conversion of all logs into endpoint agents",
-      "D": "Prevention of data normalization"
+      "A": "Prevention of data normalization",
+      "B": "Conversion of all logs into endpoint agents",
+      "C": "Association of related records and entities across ingested data",
+      "D": "Automatic deletion of every repeated value"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Log stitching associates related data points and entities so XSIAM can create a coherent security context from records originating in different sources.\n\n========================================================================================",
     "is_multiselect": false
@@ -2662,13 +2662,13 @@
     "objective": "5.1.3 - Automations and integrations",
     "stem": "What role do integrations play in Cortex XSIAM automation?",
     "options": {
-      "A": "They connect external systems and expose actions or data that automated workflows can use",
-      "B": "They define the official exam cut score",
-      "C": "They prevent playbooks from exchanging data",
-      "D": "They are limited to dashboard colors"
+      "A": "They define the official exam cut score",
+      "B": "They prevent playbooks from exchanging data",
+      "C": "They are limited to dashboard colors",
+      "D": "They connect external systems and expose actions or data that automated workflows can use"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Integrations connect XSIAM to third-party systems and services, enabling workflows to retrieve data and perform actions across the security stack.\n\n========================================================================================",
     "is_multiselect": false
@@ -2679,13 +2679,13 @@
     "objective": "5.1.4 - Content packs",
     "stem": "Why would an administrator install a Cortex XSIAM content pack?",
     "options": {
-      "A": "To add packaged integrations, playbooks, scripts, models, or other content for a use case",
-      "B": "To erase all existing investigation data",
+      "A": "To erase all existing investigation data",
+      "B": "To add packaged integrations, playbooks, scripts, models, or other content for a use case",
       "C": "To replace endpoint operating systems",
       "D": "To disable Marketplace updates permanently"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Content packs provide deployable content and dependencies for specific products and use cases, reducing the need to build every integration or workflow from scratch.\n\n========================================================================================",
     "is_multiselect": false
@@ -2696,13 +2696,13 @@
     "objective": "5.1.5 - Playbooks",
     "stem": "What is a principal benefit of using playbooks in Cortex XSIAM?",
     "options": {
-      "A": "They standardize and automate repeatable investigation and response tasks",
-      "B": "They guarantee that every alert is malicious",
-      "C": "They eliminate the need for integrations",
+      "A": "They eliminate the need for integrations",
+      "B": "They standardize and automate repeatable investigation and response tasks",
+      "C": "They guarantee that every alert is malicious",
       "D": "They function only as report templates"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "Playbooks execute predefined task flows, helping teams automate repeatable work and apply consistent investigation and response procedures.\n\n========================================================================================",
     "is_multiselect": false
@@ -2714,8 +2714,8 @@
     "stem": "What is required before Cortex XSIAM can analyze a third-party log source?",
     "options": {
       "A": "The data must be onboarded and parsed into usable fields and datasets",
-      "B": "Every record must be converted into a malware sample",
-      "C": "The source must be an endpoint agent",
+      "B": "The source must be an endpoint agent",
+      "C": "Every record must be converted into a malware sample",
       "D": "All timestamps must be removed"
     },
     "answer": [
@@ -2730,13 +2730,13 @@
     "objective": "5.2.2 - Investigation artifacts and assets",
     "stem": "Which combination provides useful investigation context in Cortex XSIAM?",
     "options": {
-      "A": "Affected assets, users, processes, indicators, alerts, and related evidence",
-      "B": "Only the case title",
-      "C": "Only the number of installed content packs",
-      "D": "Only the analyst's time zone"
+      "A": "Only the analyst's time zone",
+      "B": "Only the number of installed content packs",
+      "C": "Affected assets, users, processes, indicators, alerts, and related evidence",
+      "D": "Only the case title"
     },
     "answer": [
-      "A"
+      "C"
     ],
     "explanation": "Investigation context depends on the relationships among affected assets, identities, processes, alerts, indicators, and supporting evidence.\n\n========================================================================================",
     "is_multiselect": false
@@ -2747,13 +2747,13 @@
     "objective": "5.2.3 - Threat management, detection, and response",
     "stem": "Why does Cortex XSIAM group and prioritize related security activity?",
     "options": {
-      "A": "To reduce isolated-alert handling and focus analysts on higher-context cases or issues",
-      "B": "To hide all low-severity telemetry permanently",
-      "C": "To prevent analysts from investigating root cause",
-      "D": "To replace every response action with email"
+      "A": "To prevent analysts from investigating root cause",
+      "B": "To replace every response action with email",
+      "C": "To hide all low-severity telemetry permanently",
+      "D": "To reduce isolated-alert handling and focus analysts on higher-context cases or issues"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "Grouping and prioritization bring related detections into a higher-context unit of work, helping analysts understand scope and concentrate on the most important activity.\n\n========================================================================================",
     "is_multiselect": false
@@ -2765,9 +2765,9 @@
     "stem": "Which language is used for advanced hunting and investigation queries in Cortex XSIAM?",
     "options": {
       "A": "Cortex Query Language (XQL)",
-      "B": "HTML only",
+      "B": "Pearson VUE markup",
       "C": "SNMP trap syntax",
-      "D": "Pearson VUE markup"
+      "D": "HTML only"
     },
     "answer": [
       "A"
@@ -2781,13 +2781,13 @@
     "objective": "5.2.5 - IOCs, BIOCs, and correlations",
     "stem": "How does a BIOC differ from an IOC?",
     "options": {
-      "A": "A BIOC identifies suspicious behavior patterns, while an IOC matches a known artifact or indicator value",
-      "B": "A BIOC is a payroll record, while an IOC is a dashboard",
+      "A": "A BIOC is a payroll record, while an IOC is a dashboard",
+      "B": "There is no conceptual difference",
       "C": "An IOC always describes behavior and never an artifact",
-      "D": "There is no conceptual difference"
+      "D": "A BIOC identifies suspicious behavior patterns, while an IOC matches a known artifact or indicator value"
     },
     "answer": [
-      "A"
+      "D"
     ],
     "explanation": "IOCs identify known artifacts such as hashes, domains, or IP addresses. BIOCs describe suspicious behavioral patterns that may reveal malicious activity even without a known artifact.\n\n========================================================================================\n\nEND OF VALIDATED MASTER QUESTION BANK",
     "is_multiselect": false
@@ -2798,15 +2798,15 @@
     "objective": "3.1 - Incident Investigation and Causality Chains",
     "stem": "An analyst investigating a ransomware alert in Cortex XDR opens the Causality View. Which process node represents the origin of the execution chain?",
     "options": {
-      "A": "Root Process",
-      "B": "Causality Group Owner (CGO)",
-      "C": "Parent Artifact ID",
-      "D": "Execution Sentinel"
+      "A": "Parent Artifact ID",
+      "B": "Execution Sentinel",
+      "C": "Causality Group Owner (CGO)",
+      "D": "Root Process"
     },
     "answer": [
-      "B"
+      "C"
     ],
-    "explanation": "In Cortex XDR, the Causality Group Owner (CGO) is the process that initiated the causality group. Understanding the CGO helps analysts identify the origin of an attack.",
+    "explanation": "In Cortex XDR, the Causality Group Owner (CGO) is the process that initiated the causality group.",
     "is_multiselect": false
   },
   {
@@ -2850,15 +2850,15 @@
     "objective": "4.1 - Playbook Automation and Integrations",
     "stem": "In Cortex XSOAR, how do automation tasks transfer data between integrated security tools during playbook execution?",
     "options": {
-      "A": "Through SQL Database Queries",
+      "A": "By converting outputs into XML syslog files",
       "B": "Via Context Data JSON Data Structure",
-      "C": "By converting outputs into XML syslog files",
+      "C": "Through SQL Database Queries",
       "D": "Using direct API memory pointers"
     },
     "answer": [
       "B"
     ],
-    "explanation": "Cortex XSOAR stores and shares task outputs using Context Data—a hierarchical JSON dictionary accessible across playbook steps via paths (e.g., ${Endpoint.IP}).",
+    "explanation": "Cortex XSOAR stores and shares task outputs using Context Data—a hierarchical JSON dictionary accessible across playbook steps.",
     "is_multiselect": false
   },
   {
@@ -2867,83 +2867,49 @@
     "objective": "4.2 - Incident Fields and Layout Builder",
     "stem": "Which XSOAR component defines the layout and tabs visible to security analysts when reviewing an incident?",
     "options": {
-      "A": "Layout Builder",
-      "B": "Widget Dashboard",
-      "C": "Indicator Repository",
+      "A": "Indicator Repository",
+      "B": "Layout Builder",
+      "C": "Widget Dashboard",
       "D": "Playbook Debugger"
     },
     "answer": [
-      "A"
+      "B"
     ],
     "explanation": "The Layout Builder in Cortex XSOAR customizes incident views, field arrangements, and quick-action buttons.",
     "is_multiselect": false
   },
   {
     "id": "SECOPS-206",
-    "domain": "4 - Cortex XSOAR",
-    "objective": "4.3 - Threat Intelligence Management (TIM)",
-    "stem": "How does Cortex XSOAR TIM calculate and assign reputation scores to incoming Indicators of Compromise (IOCs)?",
-    "options": {
-      "A": "By overriding all feed scores with manual user ratings",
-      "B": "Using automated Indicator Rules and Feed Reliability Configurations",
-      "C": "By blocking all incoming indicators by default",
-      "D": "Using DNS sinkhole lookups only"
-    },
-    "answer": [
-      "B"
-    ],
-    "explanation": "Cortex XSOAR TIM calculates indicator scores by combining feed reliability settings, indicator rules, and third-party enrichment integrations.",
-    "is_multiselect": false
-  },
-  {
-    "id": "SECOPS-207",
     "domain": "5 - Cortex XSIAM",
     "objective": "5.1 - Data Ingestion, Collectors, and Broker VM",
     "stem": "Which architectural component in Cortex XSIAM collects syslog, WEC, and database logs from on-premises networks?",
     "options": {
       "A": "Cortex Data Lake Agent",
       "B": "Broker VM",
-      "C": "XSOAR Engine",
-      "D": "Prisma Access Connector"
+      "C": "Prisma Access Connector",
+      "D": "XSOAR Engine"
     },
     "answer": [
       "B"
     ],
-    "explanation": "The Broker VM is an on-premises virtual machine that ingests local telemetry (syslog, WEC, SNMP) and forwards it securely to Cortex XSIAM in the cloud.",
+    "explanation": "The Broker VM is an on-premises virtual machine that ingests local telemetry and forwards it securely to Cortex XSIAM.",
     "is_multiselect": false
   },
   {
-    "id": "SECOPS-208",
+    "id": "SECOPS-207",
     "domain": "5 - Cortex XSIAM",
     "objective": "5.2 - Alert Stitching and Analytics",
     "stem": "How does Cortex XSIAM reduce alert fatigue across heterogeneous security data sources?",
     "options": {
       "A": "By deleting low-severity alerts after 1 hour",
-      "B": "Using AI analytics to stitch related alerts into unified incidents",
-      "C": "By disabling network log ingestion during peak hours",
-      "D": "By requiring manual approval for every incoming alert"
+      "B": "By disabling network log ingestion during peak hours",
+      "C": "By requiring manual approval for every incoming alert",
+      "D": "Using AI analytics to stitch related alerts into unified incidents"
     },
     "answer": [
-      "B"
+      "D"
     ],
-    "explanation": "Cortex XSIAM uses machine learning and causality analytics to correlate and stitch disparate alerts into single, high-fidelity incidents.",
-    "is_multiselect": false
-  },
-  {
-    "id": "SECOPS-209",
-    "domain": "5 - Cortex XSIAM",
-    "objective": "5.3 - Automation Rules and Custom Modules",
-    "stem": "Which feature in Cortex XSIAM enables security teams to automatically modify incident attributes or trigger immediate playbooks upon alert ingestion?",
-    "options": {
-      "A": "Automation Rules",
-      "B": "Log Forwarding Profiles",
-      "C": "Data Retention Lifecycles",
-      "D": "XQL Parsing Schemas"
-    },
-    "answer": [
-      "A"
-    ],
-    "explanation": "Automation Rules in XSIAM evaluate incoming alerts in real-time to execute instant actions such as updating severity or running automated playbooks.",
+    "explanation": "Cortex XSIAM uses machine learning and causality analytics to correlate and stitch disparate alerts into single incidents.",
     "is_multiselect": false
   }
 ]
