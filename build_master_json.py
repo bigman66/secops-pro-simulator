@@ -2,7 +2,7 @@ import json
 import re
 
 def parse_existing_text_bank(filepath="04_SecOps_Pro_Validated_Master_Bank_163Q.txt"):
-    """Parses existing 163-question text bank into structured dict objects."""
+    """Robustly parses text bank by splitting directly on question ID headers."""
     try:
         with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
             text = f.read()
@@ -11,7 +11,8 @@ def parse_existing_text_bank(filepath="04_SecOps_Pro_Validated_Master_Bank_163Q.
         return []
 
     questions = []
-    blocks = re.split(r"={10,}|-{10,}", text)
+    # Split directly by "ID:" header to ensure no questions are skipped by divider formatting
+    blocks = re.split(r"\n(?=ID:\s*)", text)
 
     for block in blocks:
         if "ID:" not in block:
@@ -146,10 +147,25 @@ ADDITIONAL_QUESTIONS = [
         "explanation": "The Layout Builder in Cortex XSOAR customizes incident views, field arrangements, and quick-action buttons.",
         "is_multiselect": False
     },
+    {
+        "id": "SECOPS-206",
+        "domain": "4 - Cortex XSOAR",
+        "objective": "4.3 - Threat Intelligence Management (TIM)",
+        "stem": "How does Cortex XSOAR TIM calculate and assign reputation scores to incoming Indicators of Compromise (IOCs)?",
+        "options": {
+            "A": "By overriding all feed scores with manual user ratings",
+            "B": "Using automated Indicator Rules and Feed Reliability Configurations",
+            "C": "By blocking all incoming indicators by default",
+            "D": "Using DNS sinkhole lookups only"
+        },
+        "answer": ["B"],
+        "explanation": "Cortex XSOAR TIM calculates indicator scores by combining feed reliability settings, indicator rules, and third-party enrichment integrations.",
+        "is_multiselect": False
+    },
 
     # --- DOMAIN 5: CORTEX XSIAM ---
     {
-        "id": "SECOPS-206",
+        "id": "SECOPS-207",
         "domain": "5 - Cortex XSIAM",
         "objective": "5.1 - Data Ingestion, Collectors, and Broker VM",
         "stem": "Which architectural component in Cortex XSIAM collects syslog, WEC, and database logs from on-premises networks?",
@@ -164,7 +180,7 @@ ADDITIONAL_QUESTIONS = [
         "is_multiselect": False
     },
     {
-        "id": "SECOPS-207",
+        "id": "SECOPS-208",
         "domain": "5 - Cortex XSIAM",
         "objective": "5.2 - Alert Stitching and Analytics",
         "stem": "How does Cortex XSIAM reduce alert fatigue across heterogeneous security data sources?",
@@ -176,6 +192,21 @@ ADDITIONAL_QUESTIONS = [
         },
         "answer": ["B"],
         "explanation": "Cortex XSIAM uses machine learning and causality analytics to correlate and stitch disparate alerts into single, high-fidelity incidents.",
+        "is_multiselect": False
+    },
+    {
+        "id": "SECOPS-209",
+        "domain": "5 - Cortex XSIAM",
+        "objective": "5.3 - Automation Rules and Custom Modules",
+        "stem": "Which feature in Cortex XSIAM enables security teams to automatically modify incident attributes or trigger immediate playbooks upon alert ingestion?",
+        "options": {
+            "A": "Automation Rules",
+            "B": "Log Forwarding Profiles",
+            "C": "Data Retention Lifecycles",
+            "D": "XQL Parsing Schemas"
+        },
+        "answer": ["A"],
+        "explanation": "Automation Rules in XSIAM evaluate incoming alerts in real-time to execute instant actions such as updating severity or running automated playbooks.",
         "is_multiselect": False
     }
 ]
